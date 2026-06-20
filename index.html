@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Self-Review H1 2026 · Балицкая Аделина</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#FC4714;--orange-light:#FFF0EC;--orange-mid:#FFD5C8;
+  --bg:#FFFFFF;--bg2:#F5F5F5;--bg3:#EBEBEB;
+  --text:#1A1A1A;--text2:#5C5C5C;--text3:#919191;
+  --border:#E0E0E0;
+  --green:#2A9D5C;--green-bg:#E8F7EF;
+  --amber:#E6A817;--amber-bg:#FEF7E6;
+  --red:#EF4444;--red-bg:#FEF2F2;
+  --sky:#1976D2;--sky-bg:#E3F0FB;
+  --purple:#7B3FBE;
+}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;min-height:100vh;padding-bottom:0;display:flex;flex-direction:column}
+.header{background:var(--orange);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.header-name{font-family:'Roboto Condensed',sans-serif;font-size:18px;font-weight:900;color:#fff}
+.header-team{font-size:11px;color:rgba(255,255,255,.7);margin-top:2px}
+.period-chip{background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px}
+nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10px;padding:4px}
+.section-tab{display:flex;align-items:center;gap:7px;padding:6px 14px;border-radius:7px;cursor:pointer;user-select:none;transition:background .15s}
+.section-tab:hover{background:rgba(255,255,255,.15)}
+.section-tab.active{background:#fff}
+.section-tab-num{font-size:10px;font-weight:800;color:rgba(255,255,255,.6)}
+.section-tab.active .section-tab-num{color:var(--orange)}
+.section-tab-label{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);white-space:nowrap}
+.section-tab.active .section-tab-label{color:var(--text)}
+.section-body{display:none}.section-body.active{display:block;flex:1}
+.tabs-wrapper{background:var(--bg);padding:0 40px}
+.tabs{display:flex;gap:0}
+.tab{padding:12px 18px;font-size:13px;font-weight:600;color:var(--text3);cursor:pointer;border-bottom:3px solid transparent;transition:all .15s;white-space:nowrap}
+.tab:hover{color:var(--text)}.tab.active{color:var(--orange);border-bottom-color:var(--orange)}
+.panel{display:none;padding:28px 40px 0}.panel.active{display:block}
+.above-badge{display:inline-flex;align-items:center;gap:6px;background:var(--orange-light);color:var(--orange);font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.hero{background:var(--orange);border-radius:16px;padding:22px 28px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.hero-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.7);margin-bottom:8px}
+.hero-text{font-family:'Roboto Condensed',sans-serif;font-size:17px;font-weight:900;color:#fff;line-height:1.45;max-width:520px}
+.hero-text em{font-style:normal;font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:rgba(255,255,255,.8)}
+.hero-stats{display:flex;gap:18px;flex-shrink:0;background:rgba(0,0,0,.12);border-radius:12px;padding:14px 20px;align-items:center}
+.hero-stat{text-align:center}
+.hero-stat-val{font-family:'Roboto Condensed',sans-serif;font-size:26px;font-weight:900;color:#fff;letter-spacing:-.03em}
+.hero-stat-lbl{font-size:10px;color:rgba(255,255,255,.75);margin-top:2px}
+.hero-divider{width:1px;background:rgba(255,255,255,.25);height:36px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi-card{background:var(--bg2);border-radius:12px;padding:16px 18px}
+.kpi-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:6px}
+.kpi-value{font-family:'Roboto Condensed',sans-serif;font-size:28px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.kpi-sub{font-size:11px;color:var(--text3);margin-top:4px}
+.chart-card{background:var(--bg2);border-radius:12px;padding:16px 18px}
+.chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.chart-title{font-size:12px;font-weight:700}
+.chart-wrap{position:relative;height:180px}
+.driver-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin:20px 0 14px;display:flex;align-items:center;gap:12px}
+.driver-section-title::before,.driver-section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.driver-card{background:var(--bg2);border-radius:12px;padding:18px 20px;border-left:4px solid var(--orange)}
+.driver-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.driver-icon{font-size:20px}.driver-title{font-size:13px;font-weight:700}
+.driver-body{font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.pill{background:#fff;border:1px solid var(--border);border-radius:8px;padding:7px 12px;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.pill-label{font-size:11px;color:var(--text3)}.pill-value{font-size:12px;font-weight:700}
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.stat-label{font-size:12px;color:var(--text2)}.stat-sub{font-size:10px;color:var(--text3);margin-top:2px}
+.stat-right{display:flex;align-items:center;gap:8px}
+.stat-value{font-family:'Roboto Condensed',sans-serif;font-size:16px;font-weight:700}
+.ok-chip{background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px}
+.placeholder{background:var(--bg2);border:2px dashed var(--border);border-radius:12px;padding:40px;text-align:center}
+.placeholder-icon{font-size:36px;margin-bottom:12px}
+.placeholder h3{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text2)}
+.placeholder p{font-size:12px;color:var(--text3);margin-bottom:12px}
+.placeholder-tag{background:var(--amber-bg);color:var(--amber);font-size:9px;font-weight:700;padding:3px 10px;border-radius:20px}
+.tag{display:inline-flex;font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:4px}
+.tag-rus{background:#E3F0FB;color:#1976D2}.tag-int{background:#F0EBF9;color:#7B3FBE}.tag-host{background:var(--green-bg);color:var(--green)}
+.page-footer{background:var(--bg2);border-top:1px solid var(--border);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+.footer-logo{font-family:'Roboto Condensed',sans-serif;font-size:15px;font-weight:900;color:var(--orange)}
+.footer-info{font-size:11px;color:var(--text3)}
+#section-talks{padding-bottom:0}#section-talks>div{padding-bottom:0!important}#panel-above-aiblock{padding-bottom:0!important}
+</style>
+</head>
+<body>
+<div class="header">
+  <div>
+    <div class="header-name">Балицкая Аделина</div>
+    <div class="header-team">Команда роста и стратегии</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px">
+    <nav id="section-nav">
+      <div class="section-tab active" onclick="switchSection('planned',this)"><span class="section-tab-num">01</span><span class="section-tab-label">Запланированный результат</span></div>
+      <div class="section-tab" onclick="switchSection('above',this)"><span class="section-tab-num">02</span><span class="section-tab-label">Результат сверх плана</span></div>
+      <div class="section-tab" onclick="switchSection('talks',this)"><span class="section-tab-num">03</span><span class="section-tab-label">Публичные выступления</span></div>
+    </nav>
+    <span class="period-chip">ЯНВ – ИЮН 2026</span>
+  </div>
+</div>
+<div class="section-body active" id="section-planned">
+<div class="tabs-wrapper" style="padding-top:12px;border-bottom:2px solid var(--bg3)">
+  <div class="tabs" id="tabs-expected">
+    <div class="tab active" onclick="switchTab('expected','cod',this)">💳 Cash on Delivery</div>
+    <div class="tab" onclick="switchTab('expected','acq',this)">🌍 Acquisition International</div>
+    <div class="tab" onclick="switchTab('expected','interco',this)">🔄 Interco + Quality</div>
+    <div class="tab" onclick="switchTab('expected','team',this)">👥 Team Management</div>
+  </div>
+</div>
+<div class="panel active" id="panel-expected-cod">
+
+  <div class="hero">
+    <div>
+      <div class="hero-label">💳 Cash on Delivery · Ivory Coast · H1 2026</div>
+      <div class="hero-text">
+        Новая форма заказа в Кот-д'Ивуар с CoD: <strong>+300%</strong> доставок с CoD, <strong>18%</strong> доля GB от GB страны — выше ожиданий<br>
+        <em>Все метрики — июнь Run Rate (MtD 1–11 июня × 30/11)</em>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val">44 845</div><div class="hero-stat-lbl">доставок/мес</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val">$899K</div><div class="hero-stat-lbl">CoD GMV</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val">11.1%</div><div class="hero-stat-lbl">CoD Share</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val">69.1%</div><div class="hero-stat-lbl">CDR</div></div>
+    </div>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:14px">
+    <div class="kpi-card"><div class="kpi-label">Доставки</div><div class="kpi-value" style="color:var(--orange)">44 845</div><div class="kpi-sub">Oct'25: 6 → Jun RR +99%</div></div>
+    <div class="kpi-card"><div class="kpi-label">CoD GMV</div><div class="kpi-value">$899K</div><div class="kpi-sub">Oct'25: $513 → ×1750</div></div>
+    <div class="kpi-card"><div class="kpi-label">CoD Share</div><div class="kpi-value" style="color:var(--green)">11.1%</div><div class="kpi-sub">Oct'25: 0.01% → ×1110</div></div>
+    <div class="kpi-card"><div class="kpi-label">Avg Basket</div><div class="kpi-value">$11.37</div><div class="kpi-sub">Oct'25: $9.01 → +26%</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:12px">
+    <div class="chart-card"><div class="chart-header"><span class="chart-title">Доставки CoD</span></div><div class="chart-wrap"><canvas id="c-deliveries"></canvas></div></div>
+    <div class="chart-card"><div class="chart-header"><span class="chart-title">CoD GMV + Share %</span></div><div class="chart-wrap"><canvas id="c-gmv"></canvas></div>
+      <div style="display:flex;gap:12px;margin-top:8px">
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.75);display:inline-block"></span><span style="color:var(--text3);font-size:10px">GMV</span></div>
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:16px;height:2px;background:#1976D2;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Share %</span></div>
+      </div>
+    </div>
+    <div class="chart-card"><div class="chart-header"><span class="chart-title">Avg Basket, $</span></div><div class="chart-wrap"><canvas id="c-basket"></canvas></div></div>
+    <div class="chart-card"><div class="chart-header"><span class="chart-title">CDR %</span></div><div class="chart-wrap"><canvas id="c-cdr"></canvas></div></div>
+  </div>
+
+  <div class="driver-section-title">Инструменты роста</div>
+  <div class="grid-2">
+
+    <div class="driver-card" style="border-left-color:var(--green)">
+      <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);color:var(--green);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:10px">↑ Выше ожиданий</div>
+      <div class="driver-header"><span class="driver-icon">💳</span><span class="driver-title">Овердрафты курьерам · Абиджан, 5–11 июня</span></div>
+      <p class="driver-body">Возможность уйти в отрицательный CoD-баланс без активации лимитов. Раскатка без доп. ресурсов.</p>
+      <div style="background:#fff;border-radius:8px;padding:10px 12px">
+        <div class="stat-row"><div><div class="stat-label">Repayment rate</div></div><div class="stat-right"><span class="stat-value">98.4%</span><span class="ok-chip">✓ отлично</span></div></div>
+        <div class="stat-row"><div><div class="stat-label">Bad debt rate</div><div class="stat-sub">333 RUB</div></div><div class="stat-right"><span class="stat-value">0.33%</span><span class="ok-chip">✓ норма</span></div></div>
+        <div class="stat-row"><div><div class="stat-label">Доля курьеров с овердрафтом</div><div class="stat-sub">439 из ~7 000</div></div><div class="stat-right"><span class="stat-value">6.3%</span></div></div>
+        <div class="stat-row"><div><div class="stat-label">Рост CoD-заказов у курьеров с overdrafts</div><div class="stat-sub">1 199 → 3 662</div></div><div class="stat-right"><span class="stat-value">+205%</span></div></div>
+        <div class="stat-row" style="border:none"><div><div class="stat-label">Рост среднего чека у курьеров с овердрафтами</div><div class="stat-sub">6 351 → 7 275 XOF</div></div><div class="stat-right"><span class="stat-value">+15%</span></div></div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="driver-card" style="border-left-color:var(--green)">
+        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);color:var(--green);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:10px">↑ Выше ожиданий</div>
+        <div class="driver-header"><span class="driver-icon">📋</span><span class="driver-title">Новая форма в продукте · раскатка 50%</span></div>
+        <p class="driver-body">Новая форма заказа в Кот-д'Ивуар с CoD: +300% доставок с CoD, 18% доля GB от GB страны — выше ожиданий.</p>
+        <div class="pill"><span class="pill-label">Доставки CoD</span><span class="pill-value" style="color:var(--green)">+300%</span></div><div class="pill"><span class="pill-label">Доля GB</span><span class="pill-value" style="color:var(--green)">18% · выше ожиданий</span></div>
+      </div>
+      <div class="driver-card" style="border-left-color:#7B3FBE">
+        <div class="driver-header"><span class="driver-icon">📣</span><span class="driver-title">Маркетинг: узнаваемость CoD</span></div>
+        <p class="driver-body"><strong>Задача:</strong> нарастить узнаваемость новой возможности через инфлюенсеров и скаутов в Абиджане.</p>
+        <div class="pill"><span class="pill-label">Инфлюенсеры</span><span class="pill-value" style="color:#7B3FBE">5 запущено</span></div><div class="pill"><span class="pill-label">Скауты</span><span class="pill-value" style="color:#7B3FBE">2 потока</span></div>
+      </div>
+      <div class="driver-card" style="border-left-color:var(--amber)">
+        <div class="driver-header"><span class="driver-icon">⚖️</span><span class="driver-title">Настройка лимитов CoD/PRO + приоритеты пополнения</span></div>
+        <p class="driver-body">Курьеры с приоритетом пополнения получают заказы первыми — стимулирует возврат наличных.</p>
+        <div class="pill"><span class="pill-label">Результат</span><span class="pill-value" style="color:var(--amber)">↑ средний чек</span></div><div class="pill"><span class="pill-label">Результат</span><span class="pill-value" style="color:var(--amber)">Вывоз более дорогих заказов</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="panel" id="panel-expected-acq">
+
+  <div class="hero">
+    <div>
+      <div class="hero-label">🌍 Acquisition International · Jan–May 2026 · 15 стран</div>
+      <div class="hero-text">
+        Рост платных каналов на <strong>+66%</strong> при удержании Blended CAC <strong>$0.35</strong> за курьера.<br>
+        <em>Запуск 20+ перфоманс кампаний · 10 реферальных программ · Park Motivation во всех гео межнара</em>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val">+66%</div><div class="hero-stat-lbl">рост paid A1</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val">$0.35</div><div class="hero-stat-lbl">Blended CAC avg</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val">24.7К</div><div class="hero-stat-lbl">A1 пик (Apr)</div></div>
+    </div>
+  </div>
+
+  <div style="border-bottom:2px solid var(--bg3);margin-bottom:16px;display:flex;gap:0">
+    <div class="tab active" id="acqt-express" onclick="acqTab('express')" style="font-size:13px">🚀 Express ACQ</div>
+    <div class="tab" id="acqt-cargo" onclick="acqTab('cargo')" style="font-size:13px">🚚 Cargo ACQ</div>
+    <div class="tab" id="acqt-data" onclick="acqTab('data')" style="font-size:13px">📊 Прозрачная работа с данными</div>
+  </div>
+
+  <!-- EXPRESS -->
+  <div id="acq-express">
+    
+    <div class="grid-4" style="margin-bottom:14px">
+      <div class="kpi-card"><div class="kpi-label">Активности запущено</div><div class="kpi-value" style="color:var(--orange)">20+</div><div class="kpi-sub">(перфоманс / парк. мотивация / рефералка)</div></div>
+      <div class="kpi-card"><div class="kpi-label">Рост новичков (Jan→May)</div><div class="kpi-value">+17%</div><div class="kpi-sub" style="display:flex;align-items:center;gap:4px">19.9К → 23.4К <span style="color:var(--green);font-size:10px;font-weight:700">↑</span></div></div>
+      <div class="kpi-card"><div class="kpi-label">Blended CAC avg</div><div class="kpi-value">$0.35</div><div class="kpi-sub" style="display:flex;align-items:center;gap:4px">пик $0.56 → $0.37 <span style="color:var(--green);font-size:10px;font-weight:700">↓</span></div></div>
+      <div class="kpi-card"><div class="kpi-label">Paid CAC avg</div><div class="kpi-value">$1.59</div><div class="kpi-sub" style="display:flex;align-items:center;gap:4px">пик $3.1 → $1.0 <span style="color:var(--green);font-size:10px;font-weight:700">↓</span></div></div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:12px">
+      <div class="chart-card">
+        <div class="chart-header"><span class="chart-title">A1 Total · Organic vs Paid + Blended CAC</span></div>
+        <div class="chart-wrap"><canvas id="acq-c1"></canvas></div>
+        <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.75);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Organic</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(25,118,210,0.8);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Paid</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:16px;height:2px;background:#7B3FBE;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Blended CAC</span></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><span class="chart-title">Paid channels A1 + CAC</span></div>
+        <div class="chart-wrap"><canvas id="acq-c2"></canvas><div style="position:absolute;left:50%;top:10px;bottom:22px;border-left:1px dashed var(--amber);pointer-events:none"></div><div style="position:absolute;left:50%;top:0;transform:translateX(-50%);background:var(--amber-bg);color:var(--amber);font-size:9px;font-weight:700;padding:2px 6px;border-radius:6px;white-space:nowrap;pointer-events:none">март: лиды напрямую в парки</div></div>
+        <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.75);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Performance A1</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(123,63,190,0.7);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Referral A1</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:16px;height:2px;background:#FC4714;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Perf CAC</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:16px;height:2px;background:#7B3FBE;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Ref CAC</span></div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="driver-section-title">Инструменты роста</div>
+    <div class="grid-3" style="margin-bottom:14px">
+      <div class="driver-card" style="border-left-color:var(--sky)">
+        <div class="driver-header"><span class="driver-icon">🎯</span><span class="driver-title">Performance Marketing</span></div>
+        <p class="driver-body">Провели performance-запуски во всех странах межнара — до этого полноценного покрытия не было. Отдельно запустили in-house с командой такси в Латаме.</p>
+        <div style="display:flex;gap:8px;margin-bottom:5px"><span style="color:var(--sky);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2);line-height:1.5">Запуски во всех странах межнара — впервые полное покрытие performance</span></div><div style="display:flex;gap:8px;margin-bottom:5px"><span style="color:var(--sky);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2);line-height:1.5">In-house запуск с командой такси в Латаме: экономия агентской комиссии, больше контроля и быстрее итерации</span></div>
+        <div class="pill"><span class="pill-label">Africa Perf CAC</span><span class="pill-value" style="color:var(--sky)">$0.40 – $0.95</span></div><div class="pill"><span class="pill-label">LatAm Bogotá</span><span class="pill-value" style="color:var(--sky)">CAC −79% MoM</span></div>
+      </div>
+      <div class="driver-card" style="border-left-color:var(--orange)">
+        <div class="driver-header"><span class="driver-icon">🏋️</span><span class="driver-title">Park Motivation</span></div>
+        <p class="driver-body">~5 новых форматов парковых мотиваций. Запуск ПМ на вело-тарифе. Опрос 46 парков в 5 странах.</p>
+        <div style="display:flex;gap:8px;margin-bottom:5px"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2);line-height:1.5">~5 новых форматов ПМ запущено за период</span></div><div style="display:flex;gap:8px;margin-bottom:5px"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2);line-height:1.5">Запуск Park Motivation на вело-тарифе</span></div><div style="display:flex;gap:8px;margin-bottom:5px"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2);line-height:1.5">Опрос 46 парков — данные о блокерах легли в основу новой логики</span></div>
+        <div class="pill"><span class="pill-label">Охват</span><span class="pill-value" style="color:var(--orange)">5 стран · 46 парков</span></div>
+      </div>
+      <div class="driver-card" style="border-left-color:var(--purple)">
+        <div class="driver-header"><span class="driver-icon">📣</span><span class="driver-title">Referral-программа</span></div>
+        <p class="driver-body">Запущена в 6 странах. Referral CAC снизился в 2.4× за период.</p>
+        <div style="display:flex;gap:8px;margin-bottom:5px"><span style="color:var(--purple);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2);line-height:1.5">6 активных стран: CIV, Ghana, Senegal, Zambia, Colombia, Bolivia</span></div><div style="display:flex;gap:8px;margin-bottom:5px"><span style="color:var(--purple);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2);line-height:1.5">CAC снизился с $5.56 → $2.30 (−59%) за H1</span></div><div style="display:flex;gap:8px;margin-bottom:5px"><span style="color:var(--purple);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2);line-height:1.5">Namibia, Pakistan — следующие на запуск</span></div>
+        <div class="pill"><span class="pill-label">Стран активно</span><span class="pill-value" style="color:var(--purple)">6</span></div><div class="pill"><span class="pill-label">Referral CAC</span><span class="pill-value" style="color:var(--purple)">$5.56 → $2.30 (−59%)</span></div>
+      </div>
+    </div>
+    
+    <div class="driver-section-title">LTNI · Lifetime Net Income на нового курьера · RUB · когорты Jan–May 2026</div>
+    <div style="background:var(--bg2);border-radius:12px;padding:16px 18px;margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+        <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)">Сводка · когда курьер окупается</p>
+        <div style="display:flex;gap:12px">
+          <div style="display:flex;align-items:center;gap:5px"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span><span style="font-size:10px;color:var(--text3)">LTNI &gt; 0 · окупился</span></div>
+          <div style="display:flex;align-items:center;gap:5px"><span style="background:var(--amber-bg);color:var(--amber);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">↗</span><span style="font-size:10px;color:var(--text3)">Отрицательный, улучшается</span></div>
+          <div style="display:flex;align-items:center;gap:5px"><span style="background:var(--red-bg);color:var(--red);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✗</span><span style="font-size:10px;color:var(--text3)">Отрицательный, ухудшается</span></div>
+        </div>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed">
+        <colgroup><col style="width:25%"><col style="width:20%"><col style="width:15%"><col style="width:40%"></colgroup>
+        <thead><tr>
+          <th style="text-align:left;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">Страна</th>
+          <th style="text-align:center;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">Неделя окупаемости</th>
+          <th style="text-align:center;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">Статус</th>
+          <th style="text-align:left;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">LTNI W20</th>
+        </tr></thead>
+        <tbody>
+          <tr><td colspan="4" style="padding:6px 8px;font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);background:var(--bg3)">Africa</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--border);font-weight:600">Ivory Coast</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)">W4</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span></td><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700">₽3 530</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--border)">Ghana</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)">W4</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span></td><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700">₽1 172</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--border)">Zambia</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)">W4</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span></td><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700">₽842</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--border)">Senegal</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)">W4</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span></td><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700">₽722</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:2px solid var(--border)">Namibia</td><td style="text-align:center;padding:6px 8px;border-bottom:2px solid var(--border)">W4</td><td style="text-align:center;padding:6px 8px;border-bottom:2px solid var(--border)"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span></td><td style="padding:6px 8px;border-bottom:2px solid var(--border);color:var(--green);font-weight:700">₽270</td></tr>
+          <tr><td colspan="4" style="padding:6px 8px;font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);background:var(--bg3)">LatAm</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--green);font-weight:600">Bolivia</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)">W4</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span></td><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700">₽169</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--amber)">Peru</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)">&gt; W20</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)"><span style="background:var(--amber-bg);color:var(--amber);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">↗</span></td><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--amber);font-weight:700">−₽22 (улучш.)</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:2px solid var(--border);color:var(--red)">Colombia</td><td style="text-align:center;padding:6px 8px;border-bottom:2px solid var(--border)">&gt; W20</td><td style="text-align:center;padding:6px 8px;border-bottom:2px solid var(--border)"><span style="background:var(--red-bg);color:var(--red);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✗</span></td><td style="padding:6px 8px;border-bottom:2px solid var(--border);color:var(--red);font-weight:700">−₽758 (ухудш.)</td></tr>
+          <tr><td colspan="4" style="padding:6px 8px;font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);background:var(--bg3)">Asia</td></tr>
+          <tr><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--red)">Pakistan</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)">&gt; W20</td><td style="text-align:center;padding:6px 8px;border-bottom:1px solid var(--border)"><span style="background:var(--red-bg);color:var(--red);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✗</span></td><td style="padding:6px 8px;border-bottom:1px solid var(--border);color:var(--red);font-weight:700">−₽547</td></tr>
+          <tr><td style="padding:6px 8px;color:var(--red)">Nepal</td><td style="text-align:center;padding:6px 8px">&gt; W20</td><td style="text-align:center;padding:6px 8px"><span style="background:var(--red-bg);color:var(--red);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✗</span></td><td style="padding:6px 8px;color:var(--red);font-weight:700">−₽229</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CARGO -->
+  <div id="acq-cargo" style="display:none">
+    <div class="grid-2" style="margin-bottom:16px">
+      <div class="chart-card">
+        <div class="chart-header"><span class="chart-title">Cargo A1 · Africa vs LatAm</span></div>
+        <div class="chart-wrap"><canvas id="acq-cargo-total"></canvas></div>
+        <div style="display:flex;gap:12px;margin-top:8px">
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.75);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Africa</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(25,118,210,0.8);display:inline-block"></span><span style="color:var(--text3);font-size:10px">LatAm</span></div>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-header"><span class="chart-title">Cargo A1 · по всем странам</span></div>
+        <div class="chart-wrap"><canvas id="acq-cargo-all"></canvas></div>
+        <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#FC4714;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Ivory Coast</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#1976D2;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Zambia</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#2A9D5C;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Senegal</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#7B3FBE;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Bolivia</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#E6A817;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Colombia</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#F87171;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Peru</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="driver-section-title">Что сделали</div>
+    <div class="grid-2" style="margin-bottom:14px">
+      <div class="driver-card" style="border-left-color:var(--orange)">
+        <div class="driver-header"><span class="driver-icon">🎯</span><span class="driver-title">Performance · 7 стран</span></div>
+        <p class="driver-body">Performance-кампании в Bolivia, Colombia, Peru, Zambia, Ghana, CIV, Senegal. Self-reg форма + google form.</p>
+        <div class="pill"><span class="pill-label">Охват</span><span class="pill-value" style="color:var(--orange)">7 стран · Africa + LatAm</span></div>
+      </div>
+      <div class="driver-card" style="border-left-color:var(--green)">
+        <div class="driver-header"><span class="driver-icon">🏋️</span><span class="driver-title">Park Motivation · Senegal (совместно с Express)</span></div>
+        <p class="driver-body">Парковые мотивации в Сенегале, Кот-д'Ивуаре и Гане запущены совместно для Express и Cargo. В Сенегале рост новичков в 2 раза — выше ожиданий; в Коте и Гане эффектов нет — ниже ожиданий.</p>
+        <div class="pill"><span class="pill-label">Senegal</span><span class="pill-value" style="color:var(--green)">×2 новички · выше ожиданий</span></div><div class="pill"><span class="pill-label">CIV/GH</span><span class="pill-value" style="color:var(--amber)">нет эффекта · ниже ожиданий</span></div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="acq-data" style="display:none">
+    <div class="driver-section-title" style="margin-top:4px">Работа с данными</div>
+    <div class="grid-3" style="margin-bottom:16px">
+      <div class="driver-card" style="border-left-color:var(--green)">
+        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);color:var(--green);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:10px">↑ выше ожиданий</div>
+        <div class="driver-header"><span class="driver-icon">✅</span><span class="driver-title">Прозрачность трекинга каналов</span></div>
+        <p class="driver-body">Прозрачный трекинг курьеров по каждому каналу — без единого ресурса аналитики.</p>
+        <a href="https://datalens.yandex-team.ru/qnjca7v48wnoa-acquisition-efficiency?tab=Ol&state=a859c8ef670" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px;transition:background .15s"><span style="font-size:16px">📊</span><span style="font-size:11px;font-weight:600;color:var(--sky);line-height:1.3">Открыть дашборд в DataLens →</span></a>
+        <div style="background:var(--green-bg);border-radius:8px;padding:7px 10px;font-size:11px;color:var(--green)">✓ Выполнено · без ресурса аналитики</div>
+      </div>
+      <div class="driver-card" style="border-left-color:var(--green)">
+        <div style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);color:var(--green);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:10px">↑ выше ожиданий</div>
+        <div class="driver-header"><span class="driver-icon">✅</span><span class="driver-title">Real Financial Costs</span></div>
+        <p class="driver-body">Реальные затраты на аквиз по каналам в дашборде — Agents, Call Center, Park Motivation, Performance, Referral, Scouts, SMM, WhatsApp.</p>
+        <a href="https://datalens.yandex-team.ru/qnjca7v48wnoa-acquisition-efficiency?tab=Ol&state=a859c8ef670" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px;transition:background .15s"><span style="font-size:16px">📊</span><span style="font-size:11px;font-weight:600;color:var(--sky);line-height:1.3">Открыть дашборд в DataLens →</span></a>
+        <div style="background:var(--green-bg);border-radius:8px;padding:7px 10px;font-size:11px;color:var(--green)">✓ Выполнено · без ресурса аналитики</div>
+      </div>
+      <div class="driver-card" style="border-left-color:var(--text3);opacity:.8">
+        <div class="driver-header"><span class="driver-icon">📋</span><span class="driver-title">Модель планирования SH/A1</span></div>
+        <p class="driver-body">Пока не реализована — в текущем периоде не была критически необходима.</p>
+        <div style="background:var(--amber-bg);border-radius:8px;padding:7px 10px;margin-top:8px;font-size:11px;color:var(--amber)">→ В плане на H2 2026</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="panel" id="panel-expected-interco">
+
+  <div class="hero">
+    <div>
+      <div class="hero-label">🔄 Interco & Quality · H1 2026</div>
+      <div class="hero-text">NI $ перевыполнен на <strong>+5%</strong> (+$40K). Отмены Еды 2.1% → 1.2%.<br>
+        <em>Переговоры в РБ сохранили +$250K GMV · ФК е-байков −3.2M руб/мес</em></div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val">+5%</div><div class="hero-stat-lbl">NI перевыполнение</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val" style="font-size:18px">+$250K</div><div class="hero-stat-lbl">GMV (РБ)</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val" style="font-size:18px">−3.2M</div><div class="hero-stat-lbl">руб/мес субсидий</div></div>
+    </div>
+  </div>
+
+  <div class="grid-4" style="margin-bottom:16px">
+    <div class="kpi-card"><div class="kpi-label">NI $ vs план</div><div class="kpi-value" style="color:var(--green)">+4.9%</div><div class="kpi-sub">+$40K · план выполнен</div></div>
+    <div class="kpi-card"><div class="kpi-label">Deliveries vs план</div><div class="kpi-value">−0.9%</div><div class="kpi-sub">Фактически в норме</div></div>
+    <div class="kpi-card"><div class="kpi-label">Отмены Еды</div><div class="kpi-value" style="color:var(--green)">1.2%</div><div class="kpi-sub">Янв 2.1% → Июн 1.2%</div></div>
+    <div class="kpi-card"><div class="kpi-label">Burn Еды</div><div class="kpi-value" style="color:var(--green)">0.6%</div><div class="kpi-sub">Янв 1.4% → Июн 0.6%</div></div>
+  </div>
+
+  <div style="background:var(--bg2);border-radius:12px;padding:16px 18px;margin-bottom:14px;overflow-x:auto">
+    <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:12px">EATS OKRs · Total по 7 странам</p>
+    <table style="width:100%;border-collapse:collapse;font-size:11px">
+      <thead><tr>
+        <th style="text-align:left;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">Итого · 7 стран</th>
+        <th style="text-align:right;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">CPO Δ</th>
+        <th style="text-align:right;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">Deliveries Δ</th>
+        <th style="text-align:right;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">Отмены</th>
+        <th style="text-align:right;color:var(--text3);font-weight:700;font-size:10px;padding:6px 8px;border-bottom:2px solid var(--border)">NI USD Δ</th>
+      </tr></thead>
+      <tbody>
+        <tr style="background:var(--bg3)"><td style="padding:6px 8px;font-weight:700">TOTAL</td><td style="text-align:right;padding:6px 8px;color:var(--green);font-weight:700">−13.7%</td><td style="text-align:right;padding:6px 8px;font-weight:700">−0.9%</td><td style="text-align:right;padding:6px 8px;color:var(--amber);font-weight:700">1.6%</td><td style="text-align:right;padding:6px 8px;color:var(--green);font-weight:700">+4.9%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:14px">
+    <div style="background:var(--bg2);border-radius:12px;padding:16px 18px">
+      <p style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:12px">Quality OKRs</p>
+      <table style="width:100%;border-collapse:collapse;font-size:11px">
+        <thead><tr>
+          <th style="text-align:left;color:var(--text3);font-weight:700;font-size:10px;padding:5px 6px;border-bottom:2px solid var(--border)">Метрика</th>
+          <th style="text-align:right;color:var(--text3);font-weight:700;font-size:10px;padding:5px 6px;border-bottom:2px solid var(--border)">Цель</th>
+          <th style="text-align:right;color:var(--text3);font-weight:700;font-size:10px;padding:5px 6px;border-bottom:2px solid var(--border)">Факт</th>
+          <th style="text-align:right;color:var(--text3);font-weight:700;font-size:10px;padding:5px 6px;border-bottom:2px solid var(--border)">Статус</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="padding:5px 6px;border-bottom:1px solid var(--border)">CDR INT Cargo</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border)">77%</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700">77.16%</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border)"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span></td></tr>
+          <tr><td style="padding:5px 6px;border-bottom:1px solid var(--border)">CDR INT Express</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border)">85%</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border);color:var(--amber);font-weight:700">83.22%</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border)"><span style="background:var(--amber-bg);color:var(--amber);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">−1.78пп</span></td></tr>
+          <tr><td style="padding:5px 6px;border-bottom:1px solid var(--border)">SoB INT</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border)">1.70%</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border);color:var(--green);font-weight:700">1.70%</td><td style="text-align:right;padding:5px 6px;border-bottom:1px solid var(--border)"><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">✓</span></td></tr>
+          <tr><td style="padding:5px 6px">SoB CIS</td><td style="text-align:right;padding:5px 6px">0.70%</td><td style="text-align:right;padding:5px 6px;color:var(--amber);font-weight:700">0.81%</td><td style="text-align:right;padding:5px 6px"><span style="background:var(--amber-bg);color:var(--amber);font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px">−0.11пп</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:#F0EBF9;border-radius:12px;padding:14px 16px;flex:1"><div style="font-size:11px;font-weight:700;color:var(--purple);margin-bottom:6px">Выполнено</div><p style="font-size:12px;color:var(--text2);line-height:1.6">CDR Cargo INT достигнут (77.16%). Share of bad orders INT точно в цели (1.70%).</p></div>
+      <div style="background:#F0EBF9;border-radius:12px;padding:14px 16px;flex:1"><div style="font-size:11px;font-weight:700;color:var(--purple);margin-bottom:6px">Зона внимания</div><p style="font-size:12px;color:var(--text2);line-height:1.6">CDR Express INT 83.22% (цель 85%). SoB CIS 0.81% (цель 0.70%). Причина: доля вывоза &lt;15% в УЗ, КГ.</p></div>
+    </div>
+  </div>
+
+  <div class="driver-section-title">Ключевые достижения</div>
+  <div class="grid-2" style="margin-bottom:12px">
+    <div class="driver-card" style="border-left-color:var(--purple)">
+      <div class="driver-header"><span class="driver-icon">🇧🇾</span><span class="driver-title">Interco РБ · спасённый GMV</span></div>
+      <p class="driver-body">Пересмотр условий сотрудничества для повышения доли вывоза в Яндекс Еде: работа над качеством и контролем вывоза. Восстановлено 3 500 доставок/день (конец апр–июн).</p><div class="pill"><span class="pill-label">GMV сохранено</span><span class="pill-value" style="color:var(--purple)">+$250 000</span></div><div class="pill"><span class="pill-label">Объём</span><span class="pill-value" style="color:var(--purple)">~100K заказов/мес</span></div>
+    </div>
+    <div class="driver-card" style="border-left-color:var(--purple)">
+      <div class="driver-header"><span class="driver-icon">💵</span><span class="driver-title">Качество Cash-заказов Еды</span></div>
+      <p class="driver-body">Улучшен вывоз Cash без снижения объёма на трёх рынках.</p><div class="pill"><span class="pill-label">Армения: отмены</span><span class="pill-value" style="color:var(--purple)">4.2% → 1.5%</span></div><div class="pill"><span class="pill-label">Cote d'Ivoire: отмены</span><span class="pill-value" style="color:var(--purple)">6.7% → 2.5%</span></div><div class="pill"><span class="pill-label">Zambia: отмены</span><span class="pill-value" style="color:var(--purple)">11.5% → 3.0%</span></div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="driver-card" style="border-left-color:var(--purple)">
+      <div class="driver-header"><span class="driver-icon">⚡</span><span class="driver-title">ФК электро-байков · −3.2M руб/мес</span></div>
+      <p class="driver-body">Процесс разметки и ФК е-байков с привязкой к курьерам. Исключает фрод и перетраты.</p><div class="pill"><span class="pill-label">Узбекистан</span><span class="pill-value" style="color:var(--purple)">−3.2M руб/мес ✓</span></div><div class="pill"><span class="pill-label">Беларусь</span><span class="pill-value" style="color:var(--purple)">Раскатано (июнь) ✓</span></div><div class="pill"><span class="pill-label">Казахстан</span><span class="pill-value" style="color:var(--purple)">План: июль →</span></div>
+    </div>
+    <div class="driver-card" style="border-left-color:var(--purple)">
+      <div class="driver-header"><span class="driver-icon">🏋️</span><span class="driver-title">Park Scoring · Cote d'Ivoire</span></div>
+      <p class="driver-body">Скоринг парков для стимулирования качества и аквиза. Первый подобный в регионе.</p><div class="pill"><span class="pill-label">Улучшили метрики</span><span class="pill-value" style="color:var(--purple)">46% bad parks</span></div><div class="pill"><span class="pill-label">Перераспределено</span><span class="pill-value" style="color:var(--purple)">100+ курьеров</span></div><div class="pill"><span class="pill-label">Следующий шаг</span><span class="pill-value" style="color:var(--purple)">Сенегал + Гана →</span></div>
+    </div>
+  </div>
+
+</div>
+<div class="panel" id="panel-expected-team">
+
+  <!-- HERO -->
+  <div class="hero" style="margin-bottom:16px">
+    <div>
+      <div class="hero-label">👥 Команда · H1 2026</div>
+      <div class="hero-text">Команда выросла с 1 до 5 человек — вслед за ростом проектов и географии.<br>
+        <em>3 новых онбординга · расширение зон ответственности · уход КПБ без потери покрытия</em>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val">1→5</div><div class="hero-stat-lbl">человек в команде</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val">3</div><div class="hero-stat-lbl">онбординга за H1</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val">0</div><div class="hero-stat-lbl">потерь покрытия</div></div>
+    </div>
+  </div>
+
+  <!-- СТРИМ АКВИЗ -->
+  <div class="driver-section-title">🌍 Стрим Аквиз</div>
+  <div class="grid-2" style="margin-bottom:14px">
+
+    <div class="driver-card" style="border-left-color:var(--green)">
+      <div class="driver-header"><span class="driver-icon">👤</span><span class="driver-title">Алевтина</span><span style="background:var(--green-bg);color:var(--green);font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px">↑ выше ожиданий</span></div>
+      <div style="margin-bottom:10px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Зона ответственности</div>
+        <p class="driver-body" style="margin:0">Полностью забрала на себя работу команды аквиза: ведение всего стрима в межнаре от запусков до сопровождения всех проектов во всех гео.</p>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Почему выше ожиданий</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Взяла полное владение аквизом во всём межнаре</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Покрывает полный цикл: запуски, ведение проектов, координация и операционный контроль</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="driver-card" style="border-left-color:var(--sky)">
+      <div class="driver-header"><span class="driver-icon">👤</span><span class="driver-title">Настя</span></div>
+      <div style="margin-bottom:10px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Зона ответственности</div>
+        <p class="driver-body" style="margin:0">Аналитика данных · бюджетирование всех активностей · ведение всех отчётов · презентации. Покрывает потребность, под которую иначе нужен отдельный аналитик.</p>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Результаты</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--sky);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Создание 2 дашбордов без аналитического ресурса</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--sky);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Полная поддержка анализа и алертов по каналу аквиза</span></div>
+        </div>
+      </div>
+      <div style="margin-top:10px;background:var(--sky-bg,#EEF6FF);border-radius:6px;padding:6px 10px;font-size:10px;color:var(--sky)">↑ Расширение зоны без найма аналитика</div>
+    </div>
+
+  </div>
+
+  <!-- СТРИМ ИНТЕРКО -->
+  <div class="driver-section-title">🔄 Стрим Интерко</div>
+  <div class="grid-2" style="margin-bottom:14px">
+
+    <div class="driver-card" style="border-left-color:#7B3FBE">
+      <div class="driver-header"><span class="driver-icon">👤</span><span class="driver-title">Алёна</span></div>
+      <div style="margin-bottom:10px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Зона ответственности</div>
+        <p class="driver-body" style="margin:0">Ведение проектов интерко и качества. Онбординг в H1 — быстрый вход в контекст, полное владение стримом.</p>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Результаты</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:#7B3FBE;font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Все проекты интерко + 1 КПБ · стрим в работе</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:#7B3FBE;font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Коммуникация в Беларуси: восстановили объемы интерко</span></div>
+        </div>
+      </div>
+      <div style="margin-top:10px;background:#F5EEFF;border-radius:6px;padding:6px 10px;font-size:10px;color:#7B3FBE">↑ Полное владение стримом с нуля за H1</div>
+    </div>
+
+    <div class="driver-card" style="border-left-color:#7B3FBE;opacity:.75">
+      <div class="driver-header"><span class="driver-icon">👤</span><span class="driver-title">Саша</span>
+          <span style="background:var(--amber-bg);color:var(--amber);font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px">⏱ С нами 2 месяца</span>
+        </div>
+      <div style="margin-bottom:10px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Зона ответственности</div>
+        <p class="driver-body" style="margin:0">Ведёт проекты Interco и качество. В H2 будет заниматься проектами AI.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- СТРИМ АФРИКА -->
+  <div class="driver-section-title">🌍 Стрим Африка</div>
+    <div class="driver-card" style="border-left-color:var(--green)">
+      <div class="driver-header"><span class="driver-icon">👤</span><span class="driver-title">Камилла</span></div>
+      <div style="margin-bottom:10px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Зона ответственности</div>
+        <p class="driver-body" style="margin:0">Субсидии · тарифы · комиссии и вся работа с локальными командами. Единственная точка взаимодействия с локалами по всей Африке — высокая автономность.</p>
+      </div>
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Результаты</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">ЛБ Тарифы: новая форма и Любой ближайший в Гане и Замбии дали +1,5% доставок — выше ожиданий</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Срез неэффективных субсидий в CIV, GH, ZM, SN: экономия бюджета или перезаложение денег в другую субсидию</span></div>
+          <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--green);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Гармонизация Express и Courier тарифа в CIV, GH, ZM, SN: рост AR и приведение суржа в балансовое состояние</span></div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</div><!-- /section-planned -->
+<div class="section-body" id="section-above">
+<div class="tabs-wrapper" style="padding-top:12px;border-bottom:2px solid var(--bg3)">
+  <div class="tabs" id="tabs-above">
+    <div class="tab active" onclick="switchTab('above','africa',this)">🌍 Africa Growth &amp; Strategy</div>
+    <div class="tab" onclick="switchTab('above','aiblock',this)">🤖 Автоматизация с помощью AI</div>
+  </div>
+</div>
+<div class="panel active" id="panel-above-africa">
+  <div class="above-badge">⬆ Сверх плана</div>
+  <!-- HERO -->
+  <div class="hero" style="margin-bottom:16px">
+    <div>
+      <div class="hero-label">🌍 Africa · KPI vs Мастер-бюджет · накопительно · янв–июн 2026</div>
+      <div class="hero-text">GMV и Net Inflow — выше плана. Deliveries ниже бюджета.<br><em>Данные за январь — май 2026</em></div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val" style="color:var(--green)">105.8%</div><div class="hero-stat-lbl">GMV vs бюджет (YTD)</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val" style="color:var(--green)">111.5%</div><div class="hero-stat-lbl">NI vs бюджет (YTD)</div></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat"><div class="hero-stat-val" style="color:var(--orange)">93.1%</div><div class="hero-stat-lbl">Deliveries vs бюджет (YTD)</div></div>
+    </div>
+  </div>
+
+  <!-- KPI SUMMARY PILLS -->
+  <div style="display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap">
+    <div class="kpi-card" style="flex:1;min-width:150px;text-align:center;border-top:3px solid var(--orange)">
+      <div class="kpi-label">Deliveries YTD</div>
+      <div class="kpi-value" style="color:var(--orange)">15.5M</div>
+      <div class="kpi-sub">бюджет 16.7M · 93.1%</div>
+    </div>
+    <div class="kpi-card" style="flex:1;min-width:150px;text-align:center;border-top:3px solid var(--green)">
+      <div class="kpi-label">GMV YTD</div>
+      <div class="kpi-value" style="color:var(--green)">$60.5M</div>
+      <div class="kpi-sub">бюджет $57.2M · 105.8%</div>
+    </div>
+    <div class="kpi-card" style="flex:1;min-width:150px;text-align:center;border-top:3px solid var(--green)">
+      <div class="kpi-label">Net Inflow YTD</div>
+      <div class="kpi-value" style="color:var(--green)">$4.7M</div>
+      <div class="kpi-sub">бюджет $4.2M · 111.5%</div>
+    </div>
+    <div class="kpi-card" style="flex:1;min-width:150px;text-align:center;border-top:3px solid #7B3FBE">
+      <div class="kpi-label">EBITDA YTD</div>
+      <div class="kpi-value" style="color:#7B3FBE">$1.6M</div>
+      <div class="kpi-sub">бюджет $1.0M · 178%</div>
+    </div>
+  </div>
+
+  <!-- CHARTS: monthly fact vs budget -->
+  <div class="driver-section-title">Помесячная динамика fact vs plan <span style="font-size:10px;font-weight:400;color:var(--text3)">* данные янв–май 2026</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:8px">
+
+    <div class="kpi-card" style="padding:16px">
+      <div class="kpi-label" style="margin-bottom:8px">📦 Deliveries, K</div>
+      <div class="chart-wrap" style="height:160px"><canvas id="af-del"></canvas></div>
+      <div style="display:flex;gap:10px;margin-top:8px;justify-content:center">
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#FC4714;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div>
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div>
+      </div>
+    </div>
+
+    <div class="kpi-card" style="padding:16px">
+      <div class="kpi-label" style="margin-bottom:8px">💵 Gross Booking, $K</div>
+      <div class="chart-wrap" style="height:160px"><canvas id="af-gmv"></canvas></div>
+      <div style="display:flex;gap:10px;margin-top:8px;justify-content:center">
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#2A9D5C;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div>
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div>
+      </div>
+    </div>
+
+    <div class="kpi-card" style="padding:16px">
+      <div class="kpi-label" style="margin-bottom:8px">📈 Net Inflow, $K</div>
+      <div class="chart-wrap" style="height:160px"><canvas id="af-ni"></canvas></div>
+      <div style="display:flex;gap:10px;margin-top:8px;justify-content:center">
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1976D2;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div>
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- ЧТО СДЕЛАЛИ -->
+  <div class="driver-section-title" style="margin-top:16px">Что сделали</div>
+  <div class="grid-2" style="margin-bottom:14px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <div class="driver-card" style="border-left-color:var(--purple)">
+        <div class="driver-header"><span class="driver-icon">🚀</span><span class="driver-title">ЛБ Тарифы · новая форма + Любой ближайший</span></div>
+        <p class="driver-body">Новая форма и Любой ближайший в Гане и Замбии: +1,5% доставок — выше ожиданий.</p>
+<div class="pill"><span class="pill-label">Результат</span><span class="pill-value" style="color:var(--purple)">+1,5% доставок</span></div>
+      </div>
+
+      <div class="driver-card" style="border-left-color:var(--amber)">
+        <div class="driver-header"><span class="driver-icon">✂️</span><span class="driver-title">Срез неэффективных субсидий · CIV, GH, ZM, SN</span></div>
+        <p class="driver-body">Задача: отключить нерабочие новичковые ДхГу и скидки на зрелых рынках.</p>
+<div class="pill"><span class="pill-label">Результат</span><span class="pill-value" style="color:var(--amber)">Экономия или перезаложение бюджета</span></div>
+      </div>
+
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <div class="driver-card" style="border-left-color:var(--sky)">
+        <div class="driver-header"><span class="driver-icon">📐</span><span class="driver-title">Гармонизация Express и Courier тарифа · CIV, GH, ZM, SN</span></div>
+        <p class="driver-body">Задача: привести Express и Courier тарифы в балансовое состояние во всех 4 странах.</p>
+<div class="pill"><span class="pill-label">Результат</span><span class="pill-value" style="color:var(--sky)">Рост AR + баланс суржа</span></div>
+      </div>
+
+      <div class="driver-card" style="border-left-color:var(--green)">
+        <div class="driver-header"><span class="driver-icon">💉</span><span class="driver-title">UNICEF · Zambia</span></div>
+        <p class="driver-body">Задача: запустить доставку вакцин в отдалённые деревни Замбии.</p>
+<div class="pill"><span class="pill-label">Результат</span><span class="pill-value" style="color:var(--green)">Социальный импакт · благотворительная доставка запущена</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ГЛУБОКАЯ РАБОТА ПО СТРАНАМ -->
+  <div class="driver-section-title">Глубокая работа по странам</div>
+
+  <!-- CIV -->
+  <div class="driver-card" style="border-left-color:var(--orange);margin-bottom:12px">
+    <div class="driver-header"><span class="driver-icon">🇨🇮</span><span class="driver-title">Ivory Coast · сокращаем геп к мастербюджету</span></div>
+    <p class="driver-body">Не дополучали доставки vs мастербюджет. Системная работа по тарифам, субсидиям и диспатчу позволила последовательно сокращать отставание — и в июне <strong>впервые вышли выше бюджета (+4.3%)</strong>.</p>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px"><div style="flex:1;min-width:150px;background:var(--bg2);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">План июнь · Deliveries</div><div style="font-size:15px;font-weight:700;color:var(--green);line-height:1.1">104%</div><div style="font-size:10px;color:var(--text3);margin-top:2px">1.88M / 1.80M</div></div><div style="flex:1;min-width:150px;background:var(--bg2);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">План июнь · Gross Booking</div><div style="font-size:15px;font-weight:700;color:var(--green);line-height:1.1">104%</div><div style="font-size:10px;color:var(--text3);margin-top:2px">$7.40M / $7.09M</div></div><div style="flex:1;min-width:150px;background:var(--bg2);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">План июнь · Net Inflow</div><div style="font-size:15px;font-weight:700;color:var(--green);line-height:1.1">104%</div><div style="font-size:10px;color:var(--text3);margin-top:2px">$556K / $533K</div></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:2px">
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)">
+        <div class="kpi-label" style="margin-bottom:8px">📦 Deliveries, K · fact vs plan</div>
+        <div class="chart-wrap" style="height:136px"><canvas id="country-civ-del"></canvas></div>
+        <div style="display:flex;gap:10px;margin-top:8px;justify-content:center"><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#FC4714;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div></div>
+      </div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)">
+        <div class="kpi-label" style="margin-bottom:8px">💵 Gross Booking, $K · fact vs plan</div>
+        <div class="chart-wrap" style="height:136px"><canvas id="country-civ-gb"></canvas></div>
+        <div style="display:flex;gap:10px;margin-top:8px;justify-content:center"><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#2A9D5C;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div></div>
+      </div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)">
+        <div class="kpi-label" style="margin-bottom:8px">📈 Net Inflow, $K · fact vs plan</div>
+        <div class="chart-wrap" style="height:136px"><canvas id="country-civ-ni"></canvas></div>
+        <div style="display:flex;gap:10px;margin-top:8px;justify-content:center"><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1976D2;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div></div>
+      </div>
+    </div>
+    <div style="font-size:10px;color:var(--text3);text-align:right;margin-top:7px">* данные янв–май 2026; июнь — прогноз полного месяца по MTD / прошедшие дни × 30</div>
+  </div>
+
+  <!-- GHANA -->
+  <div class="driver-card" style="border-left-color:var(--red);margin-bottom:12px">
+    <div class="driver-header"><span class="driver-icon">🇬🇭</span><span class="driver-title">Ghana · в поиске решения</span></div>
+    <p class="driver-body">Ситуация значительно сложнее: геп к бюджету не сокращается, а растёт — с ~10% в январе до ~35% в июне. Сильное конкурентное давление. Тарифные и субсидийные решения не дали устойчивого эффекта. Работа по поиску решения продолжается.</p>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px"><div style="flex:1;min-width:150px;background:var(--bg2);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">План июнь · Deliveries</div><div style="font-size:15px;font-weight:700;color:var(--red);line-height:1.1">65%</div><div style="font-size:10px;color:var(--text3);margin-top:2px">465K / 716K</div></div><div style="flex:1;min-width:150px;background:var(--bg2);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">План июнь · Gross Booking</div><div style="font-size:15px;font-weight:700;color:var(--red);line-height:1.1">65%</div><div style="font-size:10px;color:var(--text3);margin-top:2px">$2.16M / $3.32M</div></div><div style="flex:1;min-width:150px;background:var(--bg2);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">План июнь · Net Inflow</div><div style="font-size:15px;font-weight:700;color:var(--red);line-height:1.1">65%</div><div style="font-size:10px;color:var(--text3);margin-top:2px">$107K / $165K</div></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:2px">
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)">
+        <div class="kpi-label" style="margin-bottom:8px">📦 Deliveries, K · fact vs plan</div>
+        <div class="chart-wrap" style="height:136px"><canvas id="country-ghana-del"></canvas></div>
+        <div style="display:flex;gap:10px;margin-top:8px;justify-content:center"><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#EF4444;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div></div>
+      </div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)">
+        <div class="kpi-label" style="margin-bottom:8px">💵 Gross Booking, $K · fact vs plan</div>
+        <div class="chart-wrap" style="height:136px"><canvas id="country-ghana-gb"></canvas></div>
+        <div style="display:flex;gap:10px;margin-top:8px;justify-content:center"><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#2A9D5C;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div></div>
+      </div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)">
+        <div class="kpi-label" style="margin-bottom:8px">📈 Net Inflow, $K · fact vs plan</div>
+        <div class="chart-wrap" style="height:136px"><canvas id="country-ghana-ni"></canvas></div>
+        <div style="display:flex;gap:10px;margin-top:8px;justify-content:center"><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1976D2;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Факт</span></div><div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#CCCCCC;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Бюджет</span></div></div>
+      </div>
+    </div>
+    <div style="font-size:10px;color:var(--text3);text-align:right;margin-top:7px">* данные янв–май 2026; июнь — прогноз полного месяца по MTD / прошедшие дни × 30</div>
+  </div>
+
+
+  <!-- ETHIOPIA -->
+  <div class="driver-card" style="border-left-color:var(--green);margin-bottom:12px">
+    <div class="driver-header"><span class="driver-icon">🇪🇹</span><span class="driver-title">Ethiopia · разгон операционной базы</span></div>
+    <p class="driver-body">В Эфиопии удалось быстро поднять операционный контур: выросли завершённые доставки, AR Delivery и supply hours. Главный эффект пришёл за счёт <strong>найма bike-курьеров, перехода на собственный supply, пересборки тарифов и субсидий под конкурентный earnings</strong>. Следующий фокус — спрос: supply уже разогнан, теперь нужно добирать utilization и стабилизировать качество.</p>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+      <div style="flex:1;min-width:170px;background:var(--green-bg);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Что произошло</div><div style="font-size:15px;font-weight:700;color:var(--green);line-height:1.1">Supply ×50</div><div style="font-size:10px;color:var(--text3);margin-top:2px">SH total: ~120 → 6 358</div></div>
+      <div style="flex:1;min-width:170px;background:var(--orange-light);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Инструменты</div><div style="font-size:15px;font-weight:700;color:var(--orange);line-height:1.1">Курьеры + тарифы</div><div style="font-size:10px;color:var(--text3);margin-top:2px">Bike hiring, own supply, subsidies</div></div>
+      <div style="flex:1;min-width:170px;background:var(--sky-bg);border-radius:8px;padding:8px 10px"><div style="font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Следующий фокус</div><div style="font-size:15px;font-weight:700;color:var(--sky);line-height:1.1">Demand</div><div style="font-size:10px;color:var(--text3);margin-top:2px">Добрать utilization и качество</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:2px">
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)"><div style="display:flex;justify-content:space-between;gap:8px;margin-bottom:8px"><div><div class="kpi-label">Completed orders</div><div style="font-size:9px;color:var(--text3);margin-top:1px">weekly volume</div></div><div id="eth-d-completed" style="height:18px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--green-bg);color:var(--green);white-space:nowrap"></div></div><div class="chart-wrap" style="height:132px"><canvas id="eth-completed"></canvas></div></div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)"><div style="display:flex;justify-content:space-between;gap:8px;margin-bottom:8px"><div><div class="kpi-label">CDR</div><div style="font-size:9px;color:var(--text3);margin-top:1px">cancellation / drop rate, %</div></div><div id="eth-d-cdr" style="height:18px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--amber-bg);color:var(--amber);white-space:nowrap"></div></div><div class="chart-wrap" style="height:132px"><canvas id="eth-cdr"></canvas></div></div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)"><div style="display:flex;justify-content:space-between;gap:8px;margin-bottom:8px"><div><div class="kpi-label">Utilization</div><div style="font-size:9px;color:var(--text3);margin-top:1px">%</div></div><div id="eth-d-util" style="height:18px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--green-bg);color:var(--green);white-space:nowrap"></div></div><div class="chart-wrap" style="height:132px"><canvas id="eth-util"></canvas></div></div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--orange-mid)"><div style="display:flex;justify-content:space-between;gap:8px;margin-bottom:8px"><div><div class="kpi-label">AR Taxi vs Delivery</div><div style="font-size:9px;color:var(--text3);margin-top:1px">combined view, %</div></div></div><div class="chart-wrap" style="height:132px"><canvas id="eth-ar"></canvas></div><div style="display:flex;gap:12px;margin-top:5px"><span style="font-size:9px;color:var(--sky);font-weight:600">Taxi</span><span style="font-size:9px;color:var(--orange);font-weight:600">Delivery</span></div></div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)"><div style="display:flex;justify-content:space-between;gap:8px;margin-bottom:8px"><div><div class="kpi-label">Incentives</div><div style="font-size:9px;color:var(--text3);margin-top:1px">weekly amount</div></div><div id="eth-d-inc" style="height:18px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--green-bg);color:var(--green);white-space:nowrap"></div></div><div class="chart-wrap" style="height:132px"><canvas id="eth-inc"></canvas></div></div>
+      <div class="kpi-card" style="padding:14px 16px;background:#fff;border:1px solid var(--border)"><div style="display:flex;justify-content:space-between;gap:8px;margin-bottom:8px"><div><div class="kpi-label">SH total</div><div style="font-size:9px;color:var(--text3);margin-top:1px">log scale · ×50 over period</div></div><div id="eth-d-sh" style="height:18px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--green-bg);color:var(--green);white-space:nowrap"></div></div><div class="chart-wrap" style="height:132px"><canvas id="eth-sh"></canvas></div></div>
+    </div>
+    <div style="font-size:10px;color:var(--text3);text-align:right;margin-top:7px">* данные weekly, Jan–Jun 2026 · AR Taxi без последней точки 08 Jun</div>
+  </div>
+
+</div>
+
+<!-- AI AUTOMATION PANEL -->
+<div class="panel" id="panel-above-aiblock">
+  <div class="above-badge">⬆ Сверх плана</div>
+
+  <!-- 1. AI Reactivation Bot -->
+  <div style="text-align:center;margin:8px 0 14px;display:flex;align-items:center;gap:12px">
+    <div style="flex:1;height:1px;background:var(--bg3)"></div>
+    <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)">🤖 AI Reactivation Bot</span>
+    <div style="flex:1;height:1px;background:var(--bg3)"></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:14px">
+    <div class="driver-card" style="border-left-color:var(--orange)">
+      <div class="driver-header"><span class="driver-icon">🤖</span><span class="driver-title">Первый AI-агент реактивации на международных рынках</span></div>
+      <p class="driver-body">Бот реактивирует ушедших курьеров без колл-центра, без скриптов, без найма. Запуск за 1–2 недели вместо 3 месяцев на классический КЦ. На регуляре в Боливии и Колумбии.</p>
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">28% response rate (Cargo) · 23% (Express)</span></div>
+        <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">+2.39пп реактивации (тест vs контроль)</span></div>
+        <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--orange);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">1 800+ живых диалогов · CAC ~$25 · 0 жалоб на AI</span></div>
+      </div>
+    </div>
+    <div class="grid-2" style="gap:10px">
+      <div class="kpi-card" style="text-align:center;border-top:3px solid var(--orange)">
+        <div class="kpi-label">Response Rate</div>
+        <div class="kpi-value" style="color:var(--orange)">28%</div>
+        <div class="kpi-sub">Cargo</div>
+      </div>
+      <div class="kpi-card" style="text-align:center;border-top:3px solid var(--green)">
+        <div class="kpi-label">Прирост реактив.</div>
+        <div class="kpi-value" style="color:var(--green)">+2.4пп</div>
+        <div class="kpi-sub">vs контроль</div>
+      </div>
+      <div class="kpi-card" style="text-align:center;border-top:3px solid var(--sky)">
+        <div class="kpi-label">CAC реактивации</div>
+        <div class="kpi-value" style="color:var(--sky)">~$25</div>
+        <div class="kpi-sub">регулярный запуск</div>
+      </div>
+      <div class="kpi-card" style="text-align:center;border-top:3px solid var(--green)">
+        <div class="kpi-label">Страны на регуляре</div>
+        <div class="kpi-value" style="color:var(--green)">2</div>
+        <div class="kpi-sub">Боливия + Колумбия</div>
+      </div>
+    </div>
+
+  </div><!-- /grid-2 AI Reactivation -->
+
+  <!-- Screenshots removed -->
+
+  <!-- 2. AI Marketplace Bot -->
+  <div style="text-align:center;margin:8px 0 14px;display:flex;align-items:center;gap:12px">
+    <div style="flex:1;height:1px;background:var(--bg3)"></div>
+    <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)">🧠 AI Marketplace Bot</span>
+    <div style="flex:1;height:1px;background:var(--bg3)"></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:14px">
+    <div class="driver-card" style="border-left-color:var(--sky)">
+      <div class="driver-header"><span class="driver-icon">🧠</span><span class="driver-title">Бот заменил ежедневный ручной анализ 7 стран</span></div>
+      <p class="driver-body">Автоматически отправляет daily/weekly дайджесты и апдейты по тарифам и субсидиям.</p>
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--sky);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Daily digest: 1–2 ч/день → 0 мин (7 стран)</span></div>
+        <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--sky);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Апдейты тарифов/субсидий: 1 ч/день → авто</span></div>
+
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="pill" style="padding:10px 14px"><span class="pill-label">📊 Daily digest · 7 стран</span><span class="pill-value" style="color:var(--sky)">1–2 ч → 0 мин</span></div>
+      <div class="pill" style="padding:10px 14px"><span class="pill-label">💰 Апдейты тарифов/субсидий</span><span class="pill-value" style="color:var(--sky)">1 ч → авто</span></div>
+
+    </div>
+  </div>
+
+
+  <!-- 3. AI Delivery Bot -->
+  <div style="text-align:center;margin:8px 0 14px;display:flex;align-items:center;gap:12px">
+    <div style="flex:1;height:1px;background:var(--bg3)"></div>
+    <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)">📦 AI Delivery Bot</span>
+    <div style="flex:1;height:1px;background:var(--bg3)"></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:14px">
+    <div class="driver-card" style="border-left-color:var(--purple)">
+      <div class="driver-header"><span class="driver-icon">📦</span><span class="driver-title">AI Delivery Bot · автоматическая сводка топ-метрик доставки</span></div>
+      <p class="driver-body">Бот автоматически отправляет сводку по всем топ-метрикам доставки на ежедневной, недельной и месячной основе. Работает через сервер, без ручной сборки дашбордов.</p>
+      <div style="display:flex;flex-direction:column;gap:5px">
+        <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--purple);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Daily / Weekly / Monthly summary по ключевым Delivery KPI</span></div>
+        <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--purple);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Работает через сервер: регулярная отправка без участия аналитика</span></div>
+        <div style="display:flex;gap:7px;align-items:flex-start"><span style="color:var(--purple);font-weight:700;flex-shrink:0">→</span><span style="font-size:11px;color:var(--text2)">Реализация: 5 часов работы</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="pill" style="padding:10px 14px"><span class="pill-label">📊 Топ-метрики доставки</span><span class="pill-value" style="color:var(--purple)">daily / weekly / monthly</span></div>
+      <div class="pill" style="padding:10px 14px"><span class="pill-label">🖥️ Запуск через сервер</span><span class="pill-value" style="color:var(--purple)">на регуляре</span></div>
+      <div class="pill" style="padding:10px 14px"><span class="pill-label">🔗 Ссылка</span><span class="pill-value" style="color:var(--text3)">добавим позже</span></div>
+    </div>
+  </div>
+
+  <!-- Screenshots removed -->
+
+</div>
+
+</div><!-- /section-above -->
+
+<!-- SECTION AI — компактная вкладка по проектам -->
+<div class="section-body" id="section-ai">
+<div class="tabs-wrapper" style="padding-top:12px;border-bottom:2px solid var(--bg3)">
+  <div class="tabs" id="tabs-ai">
+    <div class="tab active" onclick="switchTab('ai','aiacq',this)">🤖 AI Reactivation Bot</div>
+    <div class="tab"        onclick="switchTab('ai','aimkt',this)">🧠 AI Marketplace Bot</div>
+    <div class="tab"        onclick="switchTab('ai','delivery',this)">📦 AI Delivery Bot</div>
+  </div>
+</div>
+
+<!-- PANEL 1: AI Reactivation -->
+<div class="panel" id="panel-above-aiblock">
+<div class="panel active" id="panel-ai-aiacq">
+  <div class="above-badge">⬆ Сверх плана</div>
+
+  <!-- HERO -->
+  <div class="hero" style="margin-bottom:16px">
+    <div>
+      <div class="hero-label">🤖 AI Reactivation Bot · Боливия → Колумбия · май 2026</div>
+      <div class="hero-text">Первый AI-агент реактивации курьеров для международных рынков — без КЦ, без найма, без скриптов.<br><em>Запуск за 1–2 недели · на регуляре в 2 странах · CAC ~$25</em></div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val">28%</div>
+        <div class="hero-stat-lbl">response rate (Cargo)</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">1 800+</div>
+        <div class="hero-stat-lbl">живых диалогов</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">0</div>
+        <div class="hero-stat-lbl">жалоб на AI</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:16px">
+    <div class="kpi-card" style="border-top:3px solid var(--orange)">
+      <div class="kpi-label">Response Rate · Cargo</div>
+      <div class="kpi-value" style="color:var(--orange);font-size:36px">28%</div>
+      <div class="kpi-sub">Cargo</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid var(--green)">
+      <div class="kpi-label">Прирост реактив.</div>
+      <div class="kpi-value" style="color:var(--green);font-size:36px">+2.39пп</div>
+      <div class="kpi-sub">тест vs контроль</div>
+    </div>
+    <div class="kpi-card" style="border-top:3px solid var(--sky)">
+      <div class="kpi-label">САС реактивации</div>
+      <div class="kpi-value" style="color:var(--sky);font-size:36px">~$25</div>
+      <div class="kpi-sub">vs $200+ через КЦ</div>
+    </div>
+  </div>
+
+  <!-- Detail cards -->
+  <div style="text-align:center;margin:4px 0 14px;display:flex;align-items:center;gap:12px">
+    <div style="flex:1;height:1px;background:var(--bg3)"></div>
+    <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3)">Ключевые результаты</span>
+    <div style="flex:1;height:1px;background:var(--bg3)"></div>
+  </div>
+  <div class="grid-2" style="margin-bottom:16px">
+    <div class="kpi-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <span style="font-size:16px">📍</span>
+        <div class="kpi-label" style="margin:0">Гео на регуляре</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:8px;padding:7px 12px">
+          <span style="font-size:12px">🇧🇴 Боливия</span>
+          <span style="font-size:11px;font-weight:700;color:var(--green)">✓ регуляр</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:8px;padding:7px 12px">
+          <span style="font-size:12px">🇨🇴 Колумбия</span>
+          <span style="font-size:11px;font-weight:700;color:var(--green)">✓ регуляр</span>
+        </div>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-size:16px">⚡</span>
+        <div class="kpi-label" style="margin:0">Скорость запуска</div>
+      </div>
+      <div style="font-size:11px;color:var(--text2);line-height:1.6">1–2 недели вместо 3 месяцев на классический колл-центр. Без найма, без скриптов, без КЦ-инфраструктуры.</div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- PANEL 2: AI Marketplace Bot -->
+<div class="panel" id="panel-ai-aimkt">
+  <div class="above-badge">⬆ Сверх плана</div>
+
+  <!-- HERO -->
+  <div class="hero" style="margin-bottom:16px">
+    <div>
+      <div class="hero-label">🧠 AI Marketplace Bot · Growth & Strategy · 7 стран</div>
+      <div class="hero-text">AI-агент, заменивший часы ручной работы с дашбордами — дайджесты и апдейты тарифов/субсидий автоматически.<br><em>Daily + Weekly дайджест · апдейты тарифов</em></div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val">0 мин</div>
+        <div class="hero-stat-lbl">daily digest (было 1–2 ч)</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">7</div>
+        <div class="hero-stat-lbl">стран покрыто</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" style="font-size:14px;line-height:1.3">автоматическая<br>отправка</div>
+        <div class="hero-stat-lbl">апдейты тарифов</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail cards -->
+  <div class="grid-3" style="margin-bottom:16px">
+    <div class="kpi-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-size:18px">📊</span>
+        <div class="kpi-label" style="margin:0">Daily & Weekly дайджесты</div>
+      </div>
+      <div style="font-size:11px;color:var(--text2);line-height:1.5">Автосбор ключевых метрик по 7 странам: доставки, GMV, Net Inflow, surge, утилизация. Рассылка в канал без ручных действий.</div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:8px;padding:6px 10px">
+        <span style="font-size:10px;color:var(--text3)">Экономия</span>
+        <span style="font-size:11px;font-weight:700;color:var(--sky)">1–2 ч/день → 0</span>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-size:18px">💰</span>
+        <div class="kpi-label" style="margin:0">Апдейты тарифов / субсидий</div>
+      </div>
+      <div style="font-size:11px;color:var(--text2);line-height:1.5">Все изменения по тарифам и субсидиям (такси + доставка) автоматически публикуются в канал. Ранее — ручной сбор, оформление, публикация.</div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:8px;padding:6px 10px">
+        <span style="font-size:10px;color:var(--text3)">Экономия</span>
+        <span style="font-size:11px;font-weight:700;color:var(--orange)">1 ч/день → авто</span>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- PANEL 3: AI Delivery Bot -->
+<div class="panel" id="panel-ai-delivery">
+  <div class="above-badge">⬆ Сверх плана</div>
+
+  <div class="hero" style="margin-bottom:16px;background:var(--purple)">
+    <div>
+      <div class="hero-label">📦 AI Delivery Bot · Delivery KPI summaries</div>
+      <div class="hero-text">Автоматическая сводка по всем топ-метрикам доставки — daily, weekly и monthly.<br><em>Работает через сервер · реализация за 5 часов · ссылка будет добавлена позже</em></div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val">3</div>
+        <div class="hero-stat-lbl">частоты: day / week / month</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">5 ч</div>
+        <div class="hero-stat-lbl">реализация</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" style="font-size:14px;line-height:1.3">server<br>run</div>
+        <div class="hero-stat-lbl">без ручной отправки</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:16px">
+    <div class="kpi-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-size:18px">📊</span>
+        <div class="kpi-label" style="margin:0">Топ-метрики Delivery</div>
+      </div>
+      <div style="font-size:11px;color:var(--text2);line-height:1.5">Автосбор и отправка сводки по ключевым метрикам доставки: deliveries, GMV, Net Inflow и другим верхнеуровневым KPI.</div>
+    </div>
+    <div class="kpi-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-size:18px">🗓️</span>
+        <div class="kpi-label" style="margin:0">Daily / Weekly / Monthly</div>
+      </div>
+      <div style="font-size:11px;color:var(--text2);line-height:1.5">Одна логика работает на ежедневной, недельной и месячной основе — без ручной подготовки и пересборки отчёта.</div>
+    </div>
+    <div class="kpi-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-size:18px">🔗</span>
+        <div class="kpi-label" style="margin:0">Ссылка</div>
+      </div>
+      <div style="font-size:11px;color:var(--text2);line-height:1.5">Здесь будет ссылка на бота / канал / артефакт после добавления.</div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center;background:var(--bg3);border-radius:8px;padding:6px 10px">
+        <span style="font-size:10px;color:var(--text3)">Статус</span>
+        <span style="font-size:11px;font-weight:700;color:var(--purple)">ссылка позже</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+</div><!-- /section-above -->
+
+
+<div class="section-body" id="section-talks">
+<div style="padding:28px 40px 0">
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start">
+
+    <!-- LEFT: numbers -->
+    <div>
+      <div style="margin-bottom:28px">
+        <div style="font-family:'Roboto Condensed',sans-serif;font-size:112px;font-weight:900;color:var(--orange);line-height:.9">4</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-top:4px">выступления</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:2px">2 темы × 2 формата каждая</div>
+      </div>
+      <div style="margin-bottom:28px">
+        <div style="font-family:'Roboto Condensed',sans-serif;font-size:112px;font-weight:900;color:var(--green);line-height:.9">1</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-top:4px">AI-хурал</div>
+        <div style="font-size:11px;color:var(--text3);margin-top:2px">межнар</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: topic cards -->
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:var(--bg2);border-radius:12px;padding:20px 24px;border-left:4px solid var(--orange)">
+        <div style="font-size:15px;font-weight:700;margin-bottom:6px">💳 Cash on Delivery</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:10px">Два рассказа: первый — про лонч CoD; второй — про лонч и дальнейшее развитие продукта.</div>
+        <div style="display:flex;gap:8px">
+          <span style="background:#E3F0FB;color:#1976D2;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🇷🇺 RUS Хурал</span>
+          <span style="background:#F0EBF9;color:#7B3FBE;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🌍 INT Хурал</span>
+        </div>
+      </div>
+      <div style="background:var(--bg2);border-radius:12px;padding:20px 24px;border-left:4px solid #7B3FBE">
+        <div style="font-size:15px;font-weight:700;margin-bottom:6px">🤖 AI Reactivation Bot</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:10px">Коротко рассказала про запуск AI-бота реактивации.</div>
+        <div style="display:flex;gap:8px">
+          <span style="background:#E3F0FB;color:#1976D2;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🇷🇺 RUS Хурал</span>
+          <span style="background:#F0EBF9;color:#7B3FBE;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🌍 INT Хурал</span>
+        </div>
+      </div>
+      <div style="background:var(--bg2);border-radius:12px;padding:20px 24px;border-left:4px solid var(--green)">
+        <div style="font-size:15px;font-weight:700;margin-bottom:6px">🌍 AI-хурал в межнаре</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:10px">Провела AI-хурал в межнаре: демонстрация AI-инструментов, примеры использования, реальные эффекты в проде (курьерский продукт, cargo-продукт).</div>
+        <div style="display:flex;gap:8px">
+          <span style="background:var(--green-bg);color:var(--green);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🌍 локальные команды</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div></div><!-- /section-talks -->
+
+<div class="page-footer">
+  <span class="footer-logo">Балицкая Аделина · Команда роста и стратегии</span>
+  <span class="footer-info">Self-Review H1 2026 · Конфиденциально</span>
+</div>
+
+<script>
+Chart.register(ChartDataLabels);
+Chart.defaults.plugins.datalabels = {display: false};
+
+function switchSection(id, el) {
+  document.querySelectorAll('.section-body').forEach(s => s.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  document.getElementById('section-nav').querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  if(id==='above') requestAnimationFrame(() => { _drawEthiopia(); _drawCountryCharts(); });
+}
+function switchTab(group, id, el) {
+  document.querySelectorAll('[id^="panel-' + group + '-"]').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + group + '-' + id).classList.add('active');
+  document.getElementById('tabs-' + group).querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+function acqTab(tab) {
+  ['express','cargo','data'].forEach(function(t){
+    var el = document.getElementById('acq-' + t);
+    if(el) el.style.display = (t===tab) ? 'block' : 'none';
+    var tb = document.getElementById('acqt-' + t);
+    if(tb) tb.classList.toggle('active', t===tab);
+  });
+  if(tab==='cargo' && !window._cargoDrawn){ window._cargoDrawn=true; requestAnimationFrame(_drawCargo); }
+}
+
+const gc='rgba(0,0,0,0.06)',tf={family:'Inter',size:10},tc='#919191';
+const base={responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{display:false},tooltip:{backgroundColor:'#1A1A1A',titleColor:'#919191',bodyColor:'#fff',borderWidth:0,padding:10,cornerRadius:8}},
+  scales:{x:{grid:{display:false},ticks:{color:tc,font:tf},border:{display:false}},y:{grid:{color:gc},ticks:{color:tc,font:tf},border:{display:false}}}};
+const bp={...base,plugins:{...base.plugins,legend:{display:false}}};
+const dlInBar={display:true,anchor:'center',align:'center',color:'#fff',font:{size:9,weight:'700'}};
+
+const months=["Oct'25","Nov'25","Dec'25","Jan'26","Feb'26","Mar'26","Apr'26","May'26","Jun'26"];
+const deliveries=[6,362,9326,11273,22373,24871,15623,21509,44845];
+const codGmv=[513,11718,123611,140649,292796,341868,263107,395817,899472];
+const codShare=[0.01,0.19,1.38,2.14,4.12,4.67,3.53,4.79,11.10];
+const avgBasket=[9.01,11.23,7.44,7.56,7.34,7.85,10.40,11.51,11.37];
+const cdr=[14.6,46.4,70.7,76.0,71.5,72.2,75.0,75.2,69.1];
+
+new Chart(document.getElementById('c-deliveries'),{type:'bar',data:{labels:months,datasets:[{data:deliveries,backgroundColor:'rgba(252,71,20,0.85)',borderRadius:5,borderSkipped:false,datalabels:{...dlInBar,formatter:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}}]},options:{...base,scales:{...base.scales,y:{...base.scales.y,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}}}}});
+new Chart(document.getElementById('c-gmv'),{type:'bar',data:{labels:months,datasets:[{type:'bar',data:codGmv,backgroundColor:'rgba(252,71,20,0.7)',borderRadius:5,borderSkipped:false,yAxisID:'y',datalabels:{...dlInBar,formatter:v=>v>=1000?`$${(v/1000).toFixed(0)}K`:`$${v}`}},{type:'line',data:codShare,borderColor:'#1976D2',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#1976D2',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:4,color:'#1976D2',font:{size:9,weight:'700'},formatter:v=>`${v}%`}}]},options:{...base,scales:{x:base.scales.x,y:{...base.scales.y,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`$${(v/1000).toFixed(0)}K`:`$${v}`}},y2:{position:'right',grid:{display:false},ticks:{color:tc,font:tf,callback:v=>`${v}%`},border:{display:false}}}}});
+new Chart(document.getElementById('c-basket'),{type:'line',data:{labels:months,datasets:[{data:avgBasket,borderColor:'#FC4714',backgroundColor:'rgba(252,71,20,0.06)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#FC4714',fill:true,datalabels:{display:true,anchor:'end',align:'top',offset:4,color:'#FC4714',font:{size:9,weight:'700'},formatter:v=>`$${v.toFixed(2)}`}}]},options:{...base,scales:{...base.scales,y:{...base.scales.y,min:6,max:14,ticks:{...base.scales.y.ticks,callback:v=>`$${v}`}}}}});
+new Chart(document.getElementById('c-cdr'),{type:'line',data:{labels:months,datasets:[{data:cdr,borderColor:'#1976D2',backgroundColor:'rgba(25,118,210,0.06)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#1976D2',fill:true,datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:4,color:'#1976D2',font:{size:9,weight:'700'},formatter:v=>`${v}%`}}]},options:{...base,scales:{...base.scales,y:{...base.scales.y,min:10,max:90,ticks:{...base.scales.y.ticks,callback:v=>`${v}%`}}}}});
+
+const acqM=['Jan','Feb','Mar','Apr','May'];
+const acqOrg=[14897,11847,18864,19226,14881];
+const acqPaid=[5099,8398,2788,5494,8479];
+const acqCac=[0.234,0.167,0.397,0.559,0.371];
+const acqAf=[9342,10764,11381,11690,11155];
+const acqLa=[7985,7085,8044,9675,7582];
+const acqAs=[2526,2318,2150,3268,4623];
+const acqPerf=[4827,8145,2531,5267,8268];
+const acqRef=[272,253,257,227,211];
+const acqPerfCac=[0.654,0.318,3.054,2.447,0.991];
+const acqRefCac=[5.563,3.159,3.363,4.144,2.295];
+const cargoAf=[975,1030,1162,1128,1312];
+const cargoLa=[1839,1662,1776,1433,1506];
+const cCIV=[524,537,547,677,609],cZMB=[371,389,456,345,599],cSEN=[80,104,159,106,104];
+const cBOL=[615,500,581,403,410],cCOL=[365,402,365,367,382],cPER=[859,760,830,663,714];
+
+new Chart(document.getElementById('acq-c1'),{type:'bar',data:{labels:acqM,datasets:[
+  {type:'bar',data:acqOrg,backgroundColor:'rgba(252,71,20,0.7)',stack:'s',borderRadius:[0,0,0,0],yAxisID:'y',datalabels:{...dlInBar,formatter:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}},
+  {type:'bar',data:acqPaid,backgroundColor:'rgba(25,118,210,0.8)',stack:'s',borderRadius:[5,5,0,0],yAxisID:'y',datalabels:{...dlInBar,formatter:v=>v>=1000?`${(v/1000).toFixed(1)}K`:v}},
+  {type:'line',data:acqCac,borderColor:'#7B3FBE',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#7B3FBE',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:6,color:'#7B3FBE',font:{size:9,weight:'700'},formatter:v=>`$${v.toFixed(2)}`}}
+]},options:{...bp,plugins:{...bp.plugins,datalabels:{}},scales:{x:base.scales.x,y:{...base.scales.y,stacked:true,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}},y2:{position:'right',grid:{display:false},ticks:{color:tc,font:tf,callback:v=>`$${v.toFixed(2)}`},border:{display:false}}}}});
+
+new Chart(document.getElementById('acq-c2'),{type:'bar',data:{labels:acqM,datasets:[
+  {type:'bar',data:acqPerf,backgroundColor:'rgba(252,71,20,0.75)',stack:'p',borderRadius:[0,0,0,0],yAxisID:'y',datalabels:{display:true,anchor:'center',align:'center',color:'#fff',font:{size:9,weight:'700'},formatter:v=>v>=1000?`${(v/1000).toFixed(1)}K`:v}},
+  {type:'bar',data:acqRef,backgroundColor:'rgba(123,63,190,0.7)',stack:'p',borderRadius:[5,5,0,0],yAxisID:'y',datalabels:{display:false}},
+  {type:'line',data:acqPerfCac,borderColor:'#FC4714',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#FC4714',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:6,color:'#FC4714',font:{size:9,weight:'700'},formatter:v=>`$${v.toFixed(1)}`}},
+  {type:'line',data:acqRefCac,borderColor:'#7B3FBE',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#7B3FBE',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'bottom':'top',offset:6,color:'#7B3FBE',font:{size:9,weight:'700'},formatter:v=>`$${v.toFixed(1)}`}}
+]},options:{...bp,plugins:{...bp.plugins,datalabels:{}},scales:{x:base.scales.x,y:{...base.scales.y,stacked:true,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}},y2:{position:'right',grid:{display:false},ticks:{color:tc,font:tf,callback:v=>`$${v.toFixed(1)}`},border:{display:false}}}}});
+
+/* A1 по хабам chart removed — canvas deleted */
+
+function _drawCargo(){
+  new Chart(document.getElementById('acq-cargo-total'),{type:'bar',data:{labels:acqM,datasets:[
+    {data:cargoAf,backgroundColor:'rgba(252,71,20,0.75)',stack:'c',borderRadius:[0,0,0,0]},
+    {data:cargoLa,backgroundColor:'rgba(25,118,210,0.8)',stack:'c',borderRadius:[5,5,0,0]}
+  ]},options:{...bp,scales:{x:base.scales.x,y:{...base.scales.y,stacked:true,ticks:{...base.scales.y.ticks,callback:v=>`${(v/1000).toFixed(1)}K`}}}}});
+  new Chart(document.getElementById('acq-cargo-all'),{type:'line',data:{labels:acqM,datasets:[
+    {data:cCIV,borderColor:'#FC4714',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#FC4714'},
+    {data:cZMB,borderColor:'#1976D2',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#1976D2'},
+    {data:cSEN,borderColor:'#2A9D5C',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#2A9D5C'},
+    {data:cBOL,borderColor:'#7B3FBE',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#7B3FBE'},
+    {data:cCOL,borderColor:'#E6A817',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#E6A817'},
+    {data:cPER,borderColor:'#F87171',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#F87171'}
+  ]},options:{...bp,scales:{...base.scales}}});
+}
+
+// ── AFRICA CHARTS (bar grouped) ──────────────────────────────────────────────
+const afM = ['Янв','Фев','Мар','Апр','Май'];
+const afFactor = 1; // data is Jan-May only
+
+const afDelM  = [2840, 2872, 3195, 3237, 3386];
+const afDelB  = [3018, 3212, 3388, 3425, 3644];
+const afGmvM  = [10955, 11492, 12266, 12361, 13450];
+const afGmvB  = [10448, 11205, 11451, 11682, 12409];
+const afNiM   = [738, 920, 1044, 1042, 947];
+const afNiB   = [660, 813, 810, 896, 1029];
+
+function afCum(a){let s=0;return a.map(v=>{s+=v;return Math.round(s);});}
+
+const afOpts = (cb,fmt) => ({ plugins:{legend:{display:false},datalabels:{display:false}},
+  responsive:true, maintainAspectRatio:false,
+  plugins:{legend:{display:false},
+    datalabels:{display:true,anchor:'end',align:'top',offset:2,font:{size:8,weight:'700'},color:(ctx)=>ctx.datasetIndex===0?'#555':'#AAA',formatter:v=>fmt(v)},
+    tooltip:{backgroundColor:'#1A1A1A',titleColor:'#919191',bodyColor:'#fff',padding:8,cornerRadius:6}},
+  scales:{
+    x:{grid:{display:false},ticks:{color:'#919191',font:{family:'Inter',size:8}},border:{display:false}},
+    y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#919191',font:{family:'Inter',size:8},callback:cb},border:{display:false},grace:'15%'}
+  }
+});
+
+// af-del chart
+new Chart(document.getElementById('af-del'),{type:'bar',data:{labels:afM,datasets:[
+  {data:afDelM,backgroundColor:'rgba(252,71,20,0.8)',borderRadius:4,label:'Факт'},
+  {data:afDelB,backgroundColor:'rgba(200,200,200,0.5)',borderRadius:4,label:'Бюджет'}
+]},options:afOpts(v=>v>=1000?`${(v/1000).toFixed(1)}M`:`${v}K`,v=>v>=1000?`${(v/1000).toFixed(1)}M`:`${v}K`)});
+
+new Chart(document.getElementById('af-gmv'),{type:'bar',data:{labels:afM,datasets:[
+  {data:afGmvM,backgroundColor:'rgba(42,157,92,0.8)',borderRadius:4,label:'Факт'},
+  {data:afGmvB,backgroundColor:'rgba(200,200,200,0.5)',borderRadius:4,label:'Бюджет'}
+]},options:afOpts(v=>v>=1000?`$${(v/1000).toFixed(1)}M`:`$${v}K`,v=>v>=1000?`$${(v/1000).toFixed(1)}M`:`$${v}K`)});
+
+new Chart(document.getElementById('af-ni'),{type:'bar',data:{labels:afM,datasets:[
+  {data:afNiM,backgroundColor:'rgba(25,118,210,0.8)',borderRadius:4,label:'Факт'},
+  {data:afNiB,backgroundColor:'rgba(200,200,200,0.5)',borderRadius:4,label:'Бюджет'}
+]},options:afOpts(v=>v>=1000?`$${(v/1000).toFixed(1)}M`:`$${v}K`,v=>v>=1000?`$${(v/1000).toFixed(1)}M`:`$${v}K`)});
+
+const countryM = ['Янв','Фев','Мар','Апр','Май','Июн прогноз'];
+const countrySeries = [
+  ['country-civ-del',[1639,1637,1781,1849,1955,1875],[1707,1760,1979,2010,2080,1797],'rgba(252,71,20,0.8)','m'],
+  ['country-civ-gb',[6565,7098,7321,7476,8255,7395],[6839,7632,8134,8126,8782,7090],'rgba(42,157,92,0.8)','usd'],
+  ['country-civ-ni',[441,628,729,699,634,556],[459,675,810,760,674,533],'rgba(25,118,210,0.8)','usd'],
+  ['country-ghana-del',[530,522,563,526,509,465],[589,611,695,706,749,716],'rgba(239,68,68,0.8)','k'],
+  ['country-ghana-gb',[2346,2236,2453,2413,2276,2155],[2607,2615,3028,3239,3347,3315],'rgba(42,157,92,0.8)','usd'],
+  ['country-ghana-ni',[169,151,140,183,96,107],[188,177,173,246,141,165],'rgba(25,118,210,0.8)','usd']
+];
+const countryFmt = {
+  m: v => `${(v/1000).toFixed(1)}M`,
+  k: v => v>=1000 ? `${(v/1000).toFixed(1)}M` : `${Math.round(v)}K`,
+  usd: v => v>=1000 ? `$${(v/1000).toFixed(1)}M` : `$${Math.round(v)}K`
+};
+const countryBarOpts = (fmt) => ({
+  responsive:true,
+  maintainAspectRatio:false,
+  animation:false,
+  plugins:{legend:{display:false},tooltip:{enabled:true},datalabels:{display:false}},
+  scales:{
+    x:{grid:{display:false},ticks:{color:'#919191',font:{family:'Inter',size:8},maxRotation:0,minRotation:0},border:{display:false}},
+    y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#919191',font:{family:'Inter',size:8},callback:fmt},border:{display:false},beginAtZero:true,grace:'12%'}
+  }
+});
+const countryCharts = {};
+function _drawCountryCharts() {
+  countrySeries.forEach(([id, fact, budget, color, fmtKey]) => {
+    const canvas = document.getElementById(id);
+    if (!canvas) return;
+    const box = canvas.parentElement && canvas.parentElement.getBoundingClientRect();
+    if (!box || box.width < 20 || box.height < 20) return;
+    if (countryCharts[id]) countryCharts[id].destroy();
+    countryCharts[id] = new Chart(canvas,{type:'bar',data:{labels:countryM,datasets:[
+      {data:fact,backgroundColor:color,borderRadius:4,label:'Факт'},
+      {data:budget,backgroundColor:'rgba(200,200,200,0.55)',borderRadius:4,label:'Бюджет'}
+    ]},options:countryBarOpts(countryFmt[fmtKey])});
+  });
+}
+_drawCountryCharts();
+setTimeout(_drawCountryCharts, 120);
+setTimeout(() => { if (document.getElementById('section-above')?.classList.contains('active')) _drawEthiopia(); }, 160);
+
+
+/* chart init */
+
+
+// ── ETHIOPIA CHARTS ──
+// valueLabels: custom plugin (scoped, won't conflict with ChartDataLabels)
+const ethValueLabels = {
+  id: 'ethValueLabels',
+  afterDatasetsDraw(chart, args, opts) {
+    const {ctx} = chart;
+    ctx.save();
+    ctx.font = '700 7px Inter';
+    chart.data.datasets.forEach((ds, di) => {
+      const meta = chart.getDatasetMeta(di);
+      let lastIdx = -1;
+      ds.data.forEach((v, i) => {
+        if (v !== null && v !== undefined) lastIdx = i;
+      });
+      if (lastIdx < 0) return;
+      const pt = meta.data[lastIdx];
+      const v = ds.data[lastIdx];
+      if (!pt) return;
+      ctx.fillStyle = ds.borderColor;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'bottom';
+      const txt = opts.pct ? Math.round(v) + '%' : (v >= 1000 ? Math.round(v) : v);
+      ctx.fillText(txt, pt.x, pt.y - 4);
+    });
+    ctx.restore();
+  }
+};
+
+function _drawEthiopia() {
+  if (window._ethDone) return; window._ethDone = true;
+  if (!document.getElementById('eth-completed')) return; // charts replaced by static screenshot
+
+  const D = {
+    labels: ["05 Jan","12 Jan","19 Jan","26 Jan","02 Feb","09 Feb","16 Feb","23 Feb","02 Mar","09 Mar","16 Mar","23 Mar","30 Mar","06 Apr","13 Apr","20 Apr","27 Apr","04 May","11 May","18 May","25 May","01 Jun","08 Jun"],
+    completed: [1231,1180,974,1004,1150,1410,1079,862,1022,1018,1155,1061,1036,1240,955,951,959,795,800,877,939,980,1177],
+    cdr:        [29.3,34.3,30.7,30.3,30.2,31.0,43.9,40.0,46.4,45.6,45.3,39.9,34.6,36.5,32.0,33.3,32.8,26.5,29.0,27.3,31.4,41.3,48.5],
+    incentives: [1150,1220,559,1277,747,1107,1220,480,796,704,729,536,630,739,564,779,821,637,648,810,723,1231,1595],
+    sh:         [121,123,71,246,93,49,26,35,20,140,30,52,112,87,94,318,361,635,867,1922,2007,3388,6358],
+    util:       [12.4,14.0,21.6,24.7,36.3,29.3,25.8,14.3,16.5,22.0,16.8,10.3,15.2,12.2,17.1,18.7,17.0,14.5,16.2,19.1,19.2,16.5,17.2],
+    ar_taxi:    [12.4,12.7,11.2,10.7,10.3,9.7,14.9,15.1,16.9,18.0,18.5,14.8,12.4,12.5,10.7,10.3,9.1,9.2,10.8,10.5,10.5,13.3,null],
+    ar_del:     [14.3,14.5,23.6,16.8,15.0,12.4,16.3,19.2,21.2,22.0,18.1,15.3,14.8,22.8,17.5,23.0,18.3,25.4,35.5,35.9,37.5,45.7,51.8]
+  };
+
+  // Register scoped plugin (only for Ethiopia charts)
+  Chart.register(ethValueLabels);
+
+  function lastTwo(arr) {
+    const a = arr.filter(x => x !== null && x !== undefined);
+    return [a[a.length - 2], a[a.length - 1]];
+  }
+
+  function fmtWoW(id, arr, unit, goodIfDown) {
+    const el = document.getElementById('eth-' + id); if (!el) return;
+    const [prev, last] = lastTwo(arr);
+    const diff = last - prev;
+    const diffRnd = Math.abs(diff) < 10 ? diff.toFixed(1) : Math.round(diff);
+    const up = diff > 0;
+    const arrow = up ? '↑' : (diff < 0 ? '↓' : '→');
+    el.innerHTML = '<span style="font-size:7px;opacity:.6;letter-spacing:.04em">WoW</span> ' + arrow + ' ' + (up ? '+' : '') + diffRnd + unit;
+    el.style.background = '';
+    el.style.color = '';
+    const isGood = goodIfDown ? diff < 0 : diff > 0;
+    if (diff === 0) { el.style.background = 'var(--bg3)'; el.style.color = 'var(--text2)'; }
+    else if (isGood) { el.style.background = 'var(--green-bg)'; el.style.color = 'var(--green)'; }
+    else { el.style.background = 'var(--amber-bg)'; el.style.color = 'var(--amber)'; }
+  }
+
+  const ethBase = (extra = {}) => ({
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: {display: false},
+      datalabels: {display: false},
+      tooltip: {enabled: true, mode: 'index', intersect: false, bodyFont: {size: 10}, titleFont: {size: 10}},
+      ethValueLabels: {pct: extra.pct || false}
+    },
+    layout: {padding: {top: 10, right: 4, left: 2, bottom: 2}},
+    elements: {point: {radius: 1.5, hoverRadius: 4}, line: {borderWidth: 2, tension: .3}},
+    scales: {
+      x: {grid: {display: false}, ticks: {maxTicksLimit: 5, font: {size: 8}, maxRotation: 0}},
+      y: Object.assign({grid: {color: '#ECECEC'}, ticks: {maxTicksLimit: 4, font: {size: 8}}, beginAtZero: false}, extra.y || {})
+    }
+  });
+
+  const lds = (data, color, fill = true) => ({
+    data, borderColor: color,
+    backgroundColor: fill ? color + '18' : 'transparent',
+    fill, pointBackgroundColor: color
+  });
+
+  new Chart(document.getElementById('eth-completed'), {type:'line', data:{labels:D.labels,datasets:[lds(D.completed,'#2A9D5C')]}, options:ethBase()});
+  fmtWoW('d-completed', D.completed, '', false);
+
+  new Chart(document.getElementById('eth-cdr'), {type:'line', data:{labels:D.labels,datasets:[lds(D.cdr,'#E6A817')]}, options:ethBase({pct:true, y:{ticks:{callback:v=>Math.round(v)+'%'}}})});
+  fmtWoW('d-cdr', D.cdr, 'pp', true);
+
+  new Chart(document.getElementById('eth-util'), {type:'line', data:{labels:D.labels,datasets:[lds(D.util,'#1976D2')]}, options:ethBase({pct:true, y:{ticks:{callback:v=>Math.round(v)+'%'}}})});
+  fmtWoW('d-util', D.util, 'pp', false);
+
+  new Chart(document.getElementById('eth-ar'), {type:'line', data:{labels:D.labels,datasets:[lds(D.ar_taxi,'#1976D2',false),lds(D.ar_del,'#FC4714',false)]},
+    options: Object.assign(ethBase({pct:true, y:{ticks:{callback:v=>Math.round(v)+'%'}}}), {spanGaps:false})});
+
+  new Chart(document.getElementById('eth-inc'), {type:'line', data:{labels:D.labels,datasets:[lds(D.incentives,'#7B3FBE')]}, options:ethBase()});
+  fmtWoW('d-inc', D.incentives, '', false);
+
+  new Chart(document.getElementById('eth-sh'), {type:'line', data:{labels:D.labels,datasets:[lds(D.sh,'#FC4714')]},
+    options: {...ethBase(), scales: {x:{grid:{display:false},ticks:{maxTicksLimit:5,font:{size:8},maxRotation:0}}, y:{type:'logarithmic',grid:{color:'#ECECEC'},ticks:{maxTicksLimit:4,font:{size:8},callback:v=>{const a=[10,100,1000,10000];return a.includes(v)?v:'';}}}} }});
+  fmtWoW('d-sh', D.sh, '', false);
+}
+</script>
+</body>
+</html>
