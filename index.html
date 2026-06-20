@@ -94,7 +94,8 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
   </div>
   <div style="display:flex;align-items:center;gap:16px">
     <nav id="section-nav">
-      <div class="section-tab active" onclick="switchSection('planned',this)"><span class="section-tab-num">01</span><span class="section-tab-label">Запланированный результат</span></div>
+      <div class="section-tab active" onclick="switchSection('summary',this)"><span class="section-tab-num">00</span><span class="section-tab-label">Summary</span></div>
+      <div class="section-tab" onclick="switchSection('planned',this)"><span class="section-tab-num">01</span><span class="section-tab-label">Запланированный результат</span></div>
       <div class="section-tab" onclick="switchSection('above',this)"><span class="section-tab-num">02</span><span class="section-tab-label">Результат сверх плана</span></div>
       <div class="section-tab" onclick="switchSection('talks',this)"><span class="section-tab-num">03</span><span class="section-tab-label">Публичные выступления</span></div>
     </nav>
@@ -102,7 +103,8 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
   </div>
 </div>
 
-<section style="padding:24px 40px 22px;background:#fff;border-bottom:2px solid var(--bg3)">
+<div class="section-body active" id="section-summary">
+<section style="padding:28px 40px 28px;background:#fff">
   <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:stretch">
     <div style="background:var(--orange);border-radius:16px;padding:22px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center">
       <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.72);margin-bottom:8px">H1 2026 · краткое ревью</div>
@@ -117,7 +119,8 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
     </div>
   </div>
 </section>
-<div class="section-body active" id="section-planned">
+</div>
+<div class="section-body" id="section-planned">
 <div class="tabs-wrapper" style="padding-top:12px;border-bottom:2px solid var(--bg3)">
   <div class="tabs" id="tabs-expected">
     <div class="tab active" onclick="switchTab('expected','cod',this)">💳 Cash on Delivery</div>
