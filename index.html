@@ -1249,11 +1249,11 @@ function afCum(a){let s=0;return a.map(v=>{s+=v;return Math.round(s);});}
 const afOpts = (cb,fmt) => ({ plugins:{legend:{display:false},datalabels:{display:false}},
   responsive:true, maintainAspectRatio:false,
   plugins:{legend:{display:false},
-    datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.datasetIndex===0?'left':'right',offset:3,clamp:true,font:{size:8,weight:'700'},color:(ctx)=>ctx.datasetIndex===0?'#555':'#AAA',formatter:v=>fmt(v)},
+    datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.datasetIndex===0?'start':'end',offset:(ctx)=>ctx.datasetIndex===0?2:4,clamp:true,clip:false,font:{size:8,weight:'700'},color:(ctx)=>ctx.datasetIndex===0?'#fff':'#777',formatter:v=>fmt(v)},
     tooltip:{backgroundColor:'#1A1A1A',titleColor:'#919191',bodyColor:'#fff',padding:8,cornerRadius:6}},
   scales:{
     x:{grid:{display:false},ticks:{color:'#919191',font:{family:'Inter',size:8}},border:{display:false}},
-    y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#919191',font:{family:'Inter',size:8},callback:cb},border:{display:false},grace:'18%'}
+    y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#919191',font:{family:'Inter',size:8},callback:cb},border:{display:false},grace:'24%'}
   }
 });
 
@@ -1291,10 +1291,10 @@ const countryBarOpts = (fmt) => ({
   responsive:true,
   maintainAspectRatio:false,
   animation:false,
-  plugins:{legend:{display:false},tooltip:{enabled:true},datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.datasetIndex===0?'left':'right',offset:3,clamp:true,font:{size:8,weight:'700'},color:(ctx)=>ctx.datasetIndex===0?'#111':'#777',formatter:v=>fmt(v)}},
+  plugins:{legend:{display:false},tooltip:{enabled:true},datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.datasetIndex===0?'start':'end',offset:(ctx)=>ctx.datasetIndex===0?2:4,clamp:true,clip:false,font:{size:8,weight:'700'},color:(ctx)=>ctx.datasetIndex===0?'#fff':'#777',formatter:v=>fmt(v)}},
   scales:{
     x:{grid:{display:false},ticks:{color:'#919191',font:{family:'Inter',size:8},maxRotation:0,minRotation:0},border:{display:false}},
-    y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#919191',font:{family:'Inter',size:8},callback:fmt},border:{display:false},beginAtZero:true,grace:'22%'}
+    y:{grid:{color:'rgba(0,0,0,0.05)'},ticks:{color:'#919191',font:{family:'Inter',size:8},callback:fmt},border:{display:false},beginAtZero:true,grace:'28%'}
   }
 });
 const countryCharts = {};
