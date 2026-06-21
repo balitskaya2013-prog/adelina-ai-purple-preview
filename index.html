@@ -15,9 +15,9 @@
   --text:#1A1A1A;--text2:#5C5C5C;--text3:#919191;
   --border:#E0E0E0;
   --green:#2A9D5C;--green-bg:#E8F7EF;
-  --amber:#E6A817;--amber-bg:#FEF7E6;
+  --amber:#919191;--amber-bg:#FEF7E6;
   --red:#EF4444;--red-bg:#FEF2F2;
-  --sky:#1976D2;--sky-bg:#E3F0FB;
+  --sky:#FC4714;--sky-bg:#E3F0FB;
   --purple:#7B3FBE;
 }
 body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;min-height:100vh;padding-bottom:0;display:flex;flex-direction:column}
@@ -52,21 +52,21 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.kpi-card{background:var(--bg2);border-radius:12px;padding:16px 18px}
+.kpi-card{background:var(--bg2);border-radius:10px;padding:15px 17px}
 .kpi-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:6px}
 .kpi-value{font-family:'Roboto Condensed',sans-serif;font-size:28px;font-weight:900;letter-spacing:-.02em;line-height:1}
-.kpi-sub{font-size:11px;color:var(--text3);margin-top:4px}
-.chart-card{background:var(--bg2);border-radius:12px;padding:16px 18px}
+.kpi-sub{font-size:10.5px;color:var(--text3);margin-top:4px;line-height:1.35}
+.chart-card{background:#FAFAFA;border:1px solid var(--border);border-radius:10px;padding:14px 16px}
 .chart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
-.chart-title{font-size:12px;font-weight:700}
+.chart-title{font-size:11px;font-weight:700;color:var(--text2)}
 .chart-wrap{position:relative;height:180px}
 .driver-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin:20px 0 14px;display:flex;align-items:center;gap:12px}
 .driver-section-title::before,.driver-section-title::after{content:'';flex:1;height:1px;background:var(--border)}
-.driver-card{background:var(--bg2);border-radius:12px;padding:18px 20px;border-left:4px solid var(--orange)}
+.driver-card{background:var(--bg2);border-radius:10px;padding:16px 18px;border-left:4px solid var(--orange)}
 .driver-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .driver-icon{font-size:20px}.driver-title{font-size:13px;font-weight:700}
-.driver-body{font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:10px}
-.pill{background:#fff;border:1px solid var(--border);border-radius:8px;padding:7px 12px;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.driver-body{font-size:11.5px;color:var(--text2);line-height:1.55;margin-bottom:9px}
+.pill{background:#fff;border:1px solid var(--border);border-radius:7px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;gap:10px}
 .pill-label{font-size:11px;color:var(--text3)}.pill-value{font-size:12px;font-weight:700}
 .stat-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
 .stat-label{font-size:12px;color:var(--text2)}.stat-sub{font-size:10px;color:var(--text3);margin-top:2px}
@@ -79,7 +79,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
 .placeholder p{font-size:12px;color:var(--text3);margin-bottom:12px}
 .placeholder-tag{background:var(--amber-bg);color:var(--amber);font-size:9px;font-weight:700;padding:3px 10px;border-radius:20px}
 .tag{display:inline-flex;font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:4px}
-.tag-rus{background:#E3F0FB;color:#1976D2}.tag-int{background:#F0EBF9;color:#7B3FBE}.tag-host{background:var(--green-bg);color:var(--green)}
+.tag-rus{background:#E3F0FB;color:#FC4714}.tag-int{background:#F0EBF9;color:#7B3FBE}.tag-host{background:var(--green-bg);color:var(--green)}
 .status-chip{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:10px}
 .status-chip.ok{background:var(--green-bg);color:var(--green)}
 .status-chip.plan{background:var(--orange-light);color:var(--orange)}
@@ -90,6 +90,11 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
 [style*="border-top:3px solid var(--sky)"]{border-top-color:var(--orange)!important}
 [style*="background:var(--sky-bg)"]{background:var(--orange-light)!important}
 [style*="background:#E3F0FB"]{background:var(--orange-light)!important}
+[style*="color:#FC4714"]{color:var(--orange)!important}
+[style*="background:#FC4714"]{background:var(--orange)!important}
+[style*="border-left-color:var(--amber)"]{border-left-color:var(--text3)!important}
+[style*="color:var(--amber)"]{color:var(--text2)!important}
+[style*="background:var(--amber-bg)"]{background:var(--bg3)!important}
 .page-footer{background:var(--bg2);border-top:1px solid var(--border);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;margin-top:auto}
 .footer-logo{font-family:'Roboto Condensed',sans-serif;font-size:15px;font-weight:900;color:var(--orange)}
 .footer-info{font-size:11px;color:var(--text3)}
@@ -176,7 +181,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
     <div class="chart-card"><div class="chart-header"><span class="chart-title">CoD GMV + Share %</span></div><div class="chart-wrap"><canvas id="c-gmv"></canvas></div>
       <div style="display:flex;gap:12px;margin-top:8px">
         <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.75);display:inline-block"></span><span style="color:var(--text3);font-size:10px">GMV</span></div>
-        <div style="display:flex;align-items:center;gap:4px"><span style="width:16px;height:2px;background:#1976D2;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Share %</span></div>
+        <div style="display:flex;align-items:center;gap:4px"><span style="width:16px;height:2px;background:#FC4714;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Share %</span></div>
       </div>
     </div>
     <div class="chart-card"><div class="chart-header"><span class="chart-title">Avg Basket, $</span></div><div class="chart-wrap"><canvas id="c-basket"></canvas></div></div>
@@ -261,7 +266,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
         <div class="chart-wrap"><canvas id="acq-c1"></canvas></div>
         <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
           <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.75);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Organic</span></div>
-          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(25,118,210,0.8);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Paid</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.45);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Paid</span></div>
           <div style="display:flex;align-items:center;gap:4px"><span style="width:16px;height:2px;background:#7B3FBE;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Blended CAC</span></div>
         </div>
       </div>
@@ -345,7 +350,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
         <div class="chart-wrap"><canvas id="acq-cargo-total"></canvas></div>
         <div style="display:flex;gap:12px;margin-top:8px">
           <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.75);display:inline-block"></span><span style="color:var(--text3);font-size:10px">Africa</span></div>
-          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(25,118,210,0.8);display:inline-block"></span><span style="color:var(--text3);font-size:10px">LatAm</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(252,71,20,0.45);display:inline-block"></span><span style="color:var(--text3);font-size:10px">LatAm</span></div>
         </div>
       </div>
       <div class="chart-card">
@@ -353,10 +358,10 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
         <div class="chart-wrap"><canvas id="acq-cargo-all"></canvas></div>
         <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
           <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#FC4714;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Ivory Coast</span></div>
-          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#1976D2;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Zambia</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#FC4714;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Zambia</span></div>
           <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#2A9D5C;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Senegal</span></div>
           <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#7B3FBE;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Bolivia</span></div>
-          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#E6A817;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Colombia</span></div>
+          <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#919191;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Colombia</span></div>
           <div style="display:flex;align-items:center;gap:4px"><span style="width:14px;height:2px;background:#F87171;display:inline-block"></span><span style="color:var(--text3);font-size:10px">Peru</span></div>
         </div>
       </div>
@@ -1128,7 +1133,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
         <div style="font-size:15px;font-weight:700;margin-bottom:6px">💳 Cash on Delivery</div>
         <div style="font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:10px">Два рассказа: первый — про лонч CoD; второй — про лонч и дальнейшее развитие продукта.</div>
         <div style="display:flex;gap:8px">
-          <span style="background:#E3F0FB;color:#1976D2;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🇷🇺 RUS Хурал</span>
+          <span style="background:#E3F0FB;color:#FC4714;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🇷🇺 RUS Хурал</span>
           <span style="background:#F0EBF9;color:#7B3FBE;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🌍 INT Хурал</span>
         </div>
       </div>
@@ -1136,7 +1141,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
         <div style="font-size:15px;font-weight:700;margin-bottom:6px">🤖 AI Reactivation Bot</div>
         <div style="font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:10px">Коротко рассказала про запуск AI-бота реактивации.</div>
         <div style="display:flex;gap:8px">
-          <span style="background:#E3F0FB;color:#1976D2;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🇷🇺 RUS Хурал</span>
+          <span style="background:#E3F0FB;color:#FC4714;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🇷🇺 RUS Хурал</span>
           <span style="background:#F0EBF9;color:#7B3FBE;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px">🌍 INT Хурал</span>
         </div>
       </div>
@@ -1189,7 +1194,7 @@ const base={responsive:true,maintainAspectRatio:false,
   plugins:{legend:{display:false},tooltip:{backgroundColor:'#1A1A1A',titleColor:'#919191',bodyColor:'#fff',borderWidth:0,padding:10,cornerRadius:8}},
   scales:{x:{grid:{display:false},ticks:{color:tc,font:tf},border:{display:false}},y:{grid:{color:gc},ticks:{color:tc,font:tf},border:{display:false}}}};
 const bp={...base,plugins:{...base.plugins,legend:{display:false}}};
-const dlInBar={display:true,anchor:'center',align:'center',color:'#fff',font:{size:9,weight:'700'}};
+const dlInBar={display:true,anchor:'center',align:'center',color:'#fff',font:{size:8,weight:'700'}};
 
 const months=["Oct'25","Nov'25","Dec'25","Jan'26","Feb'26","Mar'26","Apr'26","May'26","Jun'26"];
 const deliveries=[6,362,9326,11273,22373,24871,15623,21509,44845];
@@ -1199,9 +1204,9 @@ const avgBasket=[9.01,11.23,7.44,7.56,7.34,7.85,10.40,11.51,11.37];
 const cdr=[14.6,46.4,70.7,76.0,71.5,72.2,75.0,75.2,69.1];
 
 new Chart(document.getElementById('c-deliveries'),{type:'bar',data:{labels:months,datasets:[{data:deliveries,backgroundColor:'rgba(252,71,20,0.85)',borderRadius:5,borderSkipped:false,datalabels:{...dlInBar,formatter:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}}]},options:{...base,scales:{...base.scales,y:{...base.scales.y,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}}}}});
-new Chart(document.getElementById('c-gmv'),{type:'bar',data:{labels:months,datasets:[{type:'bar',data:codGmv,backgroundColor:'rgba(252,71,20,0.7)',borderRadius:5,borderSkipped:false,yAxisID:'y',datalabels:{...dlInBar,formatter:v=>v>=1000?`$${(v/1000).toFixed(0)}K`:`$${v}`}},{type:'line',data:codShare,borderColor:'#1976D2',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#1976D2',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:4,color:'#1976D2',font:{size:9,weight:'700'},formatter:v=>`${v}%`}}]},options:{...base,scales:{x:base.scales.x,y:{...base.scales.y,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`$${(v/1000).toFixed(0)}K`:`$${v}`}},y2:{position:'right',grid:{display:false},ticks:{color:tc,font:tf,callback:v=>`${v}%`},border:{display:false}}}}});
-new Chart(document.getElementById('c-basket'),{type:'line',data:{labels:months,datasets:[{data:avgBasket,borderColor:'#FC4714',backgroundColor:'rgba(252,71,20,0.06)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#FC4714',fill:true,datalabels:{display:true,anchor:'end',align:'top',offset:4,color:'#FC4714',font:{size:9,weight:'700'},formatter:v=>`$${v.toFixed(2)}`}}]},options:{...base,scales:{...base.scales,y:{...base.scales.y,min:6,max:14,ticks:{...base.scales.y.ticks,callback:v=>`$${v}`}}}}});
-new Chart(document.getElementById('c-cdr'),{type:'line',data:{labels:months,datasets:[{data:cdr,borderColor:'#1976D2',backgroundColor:'rgba(25,118,210,0.06)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#1976D2',fill:true,datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:4,color:'#1976D2',font:{size:9,weight:'700'},formatter:v=>`${v}%`}}]},options:{...base,scales:{...base.scales,y:{...base.scales.y,min:10,max:90,ticks:{...base.scales.y.ticks,callback:v=>`${v}%`}}}}});
+new Chart(document.getElementById('c-gmv'),{type:'bar',data:{labels:months,datasets:[{type:'bar',data:codGmv,backgroundColor:'rgba(252,71,20,0.7)',borderRadius:5,borderSkipped:false,yAxisID:'y',datalabels:{...dlInBar,formatter:v=>v>=1000?`$${(v/1000).toFixed(0)}K`:`$${v}`}},{type:'line',data:codShare,borderColor:'#FC4714',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#FC4714',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:4,color:'#FC4714',font:{size:8,weight:'700'},formatter:v=>`${v}%`}}]},options:{...base,scales:{x:base.scales.x,y:{...base.scales.y,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`$${(v/1000).toFixed(0)}K`:`$${v}`}},y2:{position:'right',grid:{display:false},ticks:{color:tc,font:tf,callback:v=>`${v}%`},border:{display:false}}}}});
+new Chart(document.getElementById('c-basket'),{type:'line',data:{labels:months,datasets:[{data:avgBasket,borderColor:'#FC4714',backgroundColor:'rgba(252,71,20,0.06)',borderWidth:2,pointRadius:3,pointBackgroundColor:'#FC4714',fill:true,datalabels:{display:true,anchor:'end',align:'top',offset:4,color:'#FC4714',font:{size:8,weight:'700'},formatter:v=>`$${v.toFixed(2)}`}}]},options:{...base,scales:{...base.scales,y:{...base.scales.y,min:6,max:14,ticks:{...base.scales.y.ticks,callback:v=>`$${v}`}}}}});
+new Chart(document.getElementById('c-cdr'),{type:'line',data:{labels:months,datasets:[{data:cdr,borderColor:'#FC4714',backgroundColor:'rgba(252,71,20,0.05)',borderWidth:2,pointRadius:3,pointBackgroundColor:'#FC4714',fill:true,datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:4,color:'#FC4714',font:{size:8,weight:'700'},formatter:v=>`${v}%`}}]},options:{...base,scales:{...base.scales,y:{...base.scales.y,min:10,max:90,ticks:{...base.scales.y.ticks,callback:v=>`${v}%`}}}}});
 
 const acqM=['Jan','Feb','Mar','Apr','May'];
 const acqOrg=[14897,11847,18864,19226,14881];
@@ -1221,15 +1226,15 @@ const cBOL=[615,500,581,403,410],cCOL=[365,402,365,367,382],cPER=[859,760,830,66
 
 new Chart(document.getElementById('acq-c1'),{type:'bar',data:{labels:acqM,datasets:[
   {type:'bar',data:acqOrg,backgroundColor:'rgba(252,71,20,0.7)',stack:'s',borderRadius:[0,0,0,0],yAxisID:'y',datalabels:{...dlInBar,formatter:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}},
-  {type:'bar',data:acqPaid,backgroundColor:'rgba(25,118,210,0.8)',stack:'s',borderRadius:[5,5,0,0],yAxisID:'y',datalabels:{...dlInBar,formatter:v=>v>=1000?`${(v/1000).toFixed(1)}K`:v}},
-  {type:'line',data:acqCac,borderColor:'#7B3FBE',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#7B3FBE',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:6,color:'#7B3FBE',font:{size:9,weight:'700'},formatter:v=>`$${v.toFixed(2)}`}}
+  {type:'bar',data:acqPaid,backgroundColor:'rgba(252,71,20,0.45)',stack:'s',borderRadius:[5,5,0,0],yAxisID:'y',datalabels:{...dlInBar,formatter:v=>v>=1000?`${(v/1000).toFixed(1)}K`:v}},
+  {type:'line',data:acqCac,borderColor:'#7B3FBE',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#7B3FBE',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:6,color:'#7B3FBE',font:{size:8,weight:'700'},formatter:v=>`$${v.toFixed(2)}`}}
 ]},options:{...bp,plugins:{...bp.plugins,datalabels:{}},scales:{x:base.scales.x,y:{...base.scales.y,stacked:true,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}},y2:{position:'right',grid:{display:false},ticks:{color:tc,font:tf,callback:v=>`$${v.toFixed(2)}`},border:{display:false}}}}});
 
 new Chart(document.getElementById('acq-c2'),{type:'bar',data:{labels:acqM,datasets:[
-  {type:'bar',data:acqPerf,backgroundColor:'rgba(252,71,20,0.75)',stack:'p',borderRadius:[0,0,0,0],yAxisID:'y',datalabels:{display:true,anchor:'center',align:'center',color:'#fff',font:{size:9,weight:'700'},formatter:v=>v>=1000?`${(v/1000).toFixed(1)}K`:v}},
+  {type:'bar',data:acqPerf,backgroundColor:'rgba(252,71,20,0.75)',stack:'p',borderRadius:[0,0,0,0],yAxisID:'y',datalabels:{display:true,anchor:'center',align:'center',color:'#fff',font:{size:8,weight:'700'},formatter:v=>v>=1000?`${(v/1000).toFixed(1)}K`:v}},
   {type:'bar',data:acqRef,backgroundColor:'rgba(123,63,190,0.7)',stack:'p',borderRadius:[5,5,0,0],yAxisID:'y',datalabels:{display:false}},
-  {type:'line',data:acqPerfCac,borderColor:'#FC4714',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#FC4714',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:6,color:'#FC4714',font:{size:9,weight:'700'},formatter:v=>`$${v.toFixed(1)}`}},
-  {type:'line',data:acqRefCac,borderColor:'#7B3FBE',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#7B3FBE',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'bottom':'top',offset:6,color:'#7B3FBE',font:{size:9,weight:'700'},formatter:v=>`$${v.toFixed(1)}`}}
+  {type:'line',data:acqPerfCac,borderColor:'#FC4714',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#FC4714',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'top':'bottom',offset:6,color:'#FC4714',font:{size:8,weight:'700'},formatter:v=>`$${v.toFixed(1)}`}},
+  {type:'line',data:acqRefCac,borderColor:'#7B3FBE',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#7B3FBE',yAxisID:'y2',datalabels:{display:true,anchor:'end',align:(ctx)=>ctx.dataIndex%2===0?'bottom':'top',offset:6,color:'#7B3FBE',font:{size:8,weight:'700'},formatter:v=>`$${v.toFixed(1)}`}}
 ]},options:{...bp,plugins:{...bp.plugins,datalabels:{}},scales:{x:base.scales.x,y:{...base.scales.y,stacked:true,ticks:{...base.scales.y.ticks,callback:v=>v>=1000?`${(v/1000).toFixed(0)}K`:v}},y2:{position:'right',grid:{display:false},ticks:{color:tc,font:tf,callback:v=>`$${v.toFixed(1)}`},border:{display:false}}}}});
 
 /* A1 по хабам chart removed — canvas deleted */
@@ -1237,14 +1242,14 @@ new Chart(document.getElementById('acq-c2'),{type:'bar',data:{labels:acqM,datase
 function _drawCargo(){
   new Chart(document.getElementById('acq-cargo-total'),{type:'bar',data:{labels:acqM,datasets:[
     {data:cargoAf,backgroundColor:'rgba(252,71,20,0.75)',stack:'c',borderRadius:[0,0,0,0]},
-    {data:cargoLa,backgroundColor:'rgba(25,118,210,0.8)',stack:'c',borderRadius:[5,5,0,0]}
+    {data:cargoLa,backgroundColor:'rgba(252,71,20,0.45)',stack:'c',borderRadius:[5,5,0,0]}
   ]},options:{...bp,scales:{x:base.scales.x,y:{...base.scales.y,stacked:true,ticks:{...base.scales.y.ticks,callback:v=>`${(v/1000).toFixed(1)}K`}}}}});
   new Chart(document.getElementById('acq-cargo-all'),{type:'line',data:{labels:acqM,datasets:[
-    {data:cCIV,borderColor:'#FC4714',backgroundColor:'transparent',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#FC4714'},
-    {data:cZMB,borderColor:'#1976D2',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#1976D2'},
+    {data:cCIV,borderColor:'#FC4714',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#FC4714'},
+    {data:cZMB,borderColor:'#FC4714',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#FC4714'},
     {data:cSEN,borderColor:'#2A9D5C',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#2A9D5C'},
     {data:cBOL,borderColor:'#7B3FBE',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#7B3FBE'},
-    {data:cCOL,borderColor:'#E6A817',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#E6A817'},
+    {data:cCOL,borderColor:'#919191',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#919191'},
     {data:cPER,borderColor:'#F87171',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#F87171'}
   ]},options:{...bp,scales:{...base.scales}}});
 }
@@ -1427,13 +1432,13 @@ function _drawEthiopia() {
   new Chart(document.getElementById('eth-completed'), {type:'line', data:{labels:D.labels,datasets:[lds(D.completed,'#2A9D5C')]}, options:ethBase()});
   fmtWoW('d-completed', D.completed, '', false);
 
-  new Chart(document.getElementById('eth-cdr'), {type:'line', data:{labels:D.labels,datasets:[lds(D.cdr,'#E6A817')]}, options:ethBase({pct:true, y:{ticks:{callback:v=>Math.round(v)+'%'}}})});
+  new Chart(document.getElementById('eth-cdr'), {type:'line', data:{labels:D.labels,datasets:[lds(D.cdr,'#919191')]}, options:ethBase({pct:true, y:{ticks:{callback:v=>Math.round(v)+'%'}}})});
   fmtWoW('d-cdr', D.cdr, 'pp', true);
 
-  new Chart(document.getElementById('eth-util'), {type:'line', data:{labels:D.labels,datasets:[lds(D.util,'#1976D2')]}, options:ethBase({pct:true, y:{ticks:{callback:v=>Math.round(v)+'%'}}})});
+  new Chart(document.getElementById('eth-util'), {type:'line', data:{labels:D.labels,datasets:[lds(D.util,'#FC4714')]}, options:ethBase({pct:true, y:{ticks:{callback:v=>Math.round(v)+'%'}}})});
   fmtWoW('d-util', D.util, 'pp', false);
 
-  new Chart(document.getElementById('eth-ar'), {type:'line', data:{labels:D.labels,datasets:[lds(D.ar_taxi,'#1976D2',false),lds(D.ar_del,'#FC4714',false)]},
+  new Chart(document.getElementById('eth-ar'), {type:'line', data:{labels:D.labels,datasets:[lds(D.ar_taxi,'#FC4714',false),lds(D.ar_del,'#FC4714',false)]},
     options: Object.assign(ethBase({pct:true, y:{ticks:{callback:v=>Math.round(v)+'%'}}}), {spanGaps:false})});
 
   new Chart(document.getElementById('eth-inc'), {type:'line', data:{labels:D.labels,datasets:[lds(D.incentives,'#7B3FBE')]}, options:ethBase()});
