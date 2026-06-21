@@ -82,6 +82,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
 .tag-rus{background:#F5F5F5;color:#FC4714}.tag-int{background:var(--bg2);color:var(--purple)}.tag-host{background:var(--green-bg);color:var(--green)}
 .status-chip{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:10px}
 .status-chip.ok{background:var(--green-bg);color:var(--green)}
+.status-chip.high{background:var(--bg2);color:var(--purple)}
 .status-chip.plan{background:var(--orange-light);color:var(--orange)}
 .status-chip.ai{background:var(--bg2);color:var(--purple)}
 .status-chip.work{background:var(--bg3);color:var(--text2)}
@@ -97,6 +98,8 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
 [style*="background:var(--amber-bg)"]{background:var(--bg3)!important}
 .kpi-card[style*="border-top"]{border-top-color:var(--border)!important}
 .driver-card{border-left-color:var(--border)!important}
+.kpi-value[style*="color:var(--orange)"],.pill-value[style*="color:var(--orange)"],.stat-value[style*="color:var(--orange)"]{color:var(--text)!important}
+.cod-strong{color:var(--purple)!important}
 .page-footer{background:var(--bg2);border-top:1px solid var(--border);padding:12px 40px;display:flex;align-items:center;justify-content:space-between;margin-top:auto}
 .footer-logo{font-family:'Roboto Condensed',sans-serif;font-size:15px;font-weight:900;color:var(--orange)}
 .footer-info{font-size:11px;color:var(--text3)}
@@ -182,7 +185,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px">
     <div class="kpi-card" style="background:var(--bg2);border-top:3px solid var(--orange);min-height:124px"><div class="kpi-label">Масштаб роли</div><div class="kpi-value" style="color:var(--orange);font-size:30px">+2 крупных стрима</div><div class="kpi-sub">Acquisition + Africa, при сохранении CoD и Interco</div></div>
     <div class="kpi-card" style="background:var(--bg2);border-top:3px solid var(--green);min-height:124px"><div class="kpi-label">Команда</div><div class="kpi-value" style="color:var(--green);font-size:30px">с 1 до 4</div><div class="kpi-sub">рост people management и операционного ритма</div></div>
-    <div class="kpi-card" style="background:var(--bg2);border-top:3px solid var(--orange);min-height:124px"><div class="kpi-label">Результат сверх плана</div><div class="kpi-value" style="color:var(--orange);font-size:30px">COD GTV ×6.4</div><div class="kpi-sub">рост с начала года</div></div>
+    <div class="kpi-card" style="background:var(--bg2);border-top:3px solid var(--orange);min-height:124px"><div class="kpi-label">Результат сверх плана</div><div class="kpi-value cod-strong" style="font-size:30px">COD GTV ×6.4</div><div class="kpi-sub">рост с начала года</div></div>
     <div class="kpi-card" style="background:var(--bg2);border-top:3px solid var(--purple);min-height:124px"><div class="kpi-label">AI adoption</div><div class="kpi-value" style="color:var(--purple);font-size:24px;line-height:1.05">AI-боты в регулярке</div><div class="kpi-sub">дайджесты, delivery report bot, автоматизация отчетов</div></div>
   </div>
 
@@ -223,10 +226,10 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
   </div>
 
   <div class="grid-4" style="margin-bottom:14px">
-    <div class="kpi-card"><div class="kpi-label">Доставки</div><div class="kpi-value" style="color:var(--orange)">44 845</div><div class="kpi-sub">Oct'25: 6 → Jun RR +99%</div></div>
-    <div class="kpi-card"><div class="kpi-label">CoD GMV</div><div class="kpi-value">$899K</div><div class="kpi-sub">Oct'25: $513 → ×1750</div></div>
-    <div class="kpi-card"><div class="kpi-label">CoD Share</div><div class="kpi-value" style="color:var(--green)">11.1%</div><div class="kpi-sub">Oct'25: 0.01% → ×1110</div></div>
-    <div class="kpi-card"><div class="kpi-label">Avg Basket</div><div class="kpi-value">$11.37</div><div class="kpi-sub">Oct'25: $9.01 → +26%</div></div>
+    <div class="kpi-card"><div class="kpi-label">Доставки</div><div class="kpi-value cod-strong">44 845</div><div class="kpi-sub">Oct'25: 6 → Jun RR +99%</div></div>
+    <div class="kpi-card"><div class="kpi-label">CoD GMV</div><div class="kpi-value cod-strong">$899K</div><div class="kpi-sub">Oct'25: $513 → ×1750</div></div>
+    <div class="kpi-card"><div class="kpi-label">CoD Share</div><div class="kpi-value cod-strong">11.1%</div><div class="kpi-sub">Oct'25: 0.01% → ×1110</div></div>
+    <div class="kpi-card"><div class="kpi-label">Avg Basket</div><div class="kpi-value cod-strong">$11.37</div><div class="kpi-sub">Oct'25: $9.01 → +26%</div></div>
   </div>
 
   <div class="grid-2" style="margin-bottom:12px">
@@ -245,24 +248,24 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
   <div class="grid-2">
 
     <div class="driver-card" style="border-left-color:var(--green)">
-      <div class="status-chip ok">↑ Выше ожиданий</div>
+      <div class="status-chip high">↑ Выше ожиданий</div>
       <div class="driver-header"><span class="driver-icon">💳</span><span class="driver-title">Овердрафты курьерам · Абиджан, 5–11 июня</span></div>
       <p class="driver-body">Возможность уйти в отрицательный CoD-баланс без активации лимитов. Раскатка без доп. ресурсов.</p>
       <div style="background:#fff;border-radius:8px;padding:10px 12px">
         <div class="stat-row"><div><div class="stat-label">Repayment rate</div></div><div class="stat-right"><span class="stat-value">98.4%</span><span class="ok-chip">✓ отлично</span></div></div>
         <div class="stat-row"><div><div class="stat-label">Bad debt rate</div><div class="stat-sub">333 RUB</div></div><div class="stat-right"><span class="stat-value">0.33%</span><span class="ok-chip">✓ норма</span></div></div>
         <div class="stat-row"><div><div class="stat-label">Доля курьеров с овердрафтом</div><div class="stat-sub">439 из ~7 000</div></div><div class="stat-right"><span class="stat-value">6.3%</span></div></div>
-        <div class="stat-row"><div><div class="stat-label">Рост CoD-заказов у курьеров с overdrafts</div><div class="stat-sub">1 199 → 3 662</div></div><div class="stat-right"><span class="stat-value">+205%</span></div></div>
-        <div class="stat-row" style="border:none"><div><div class="stat-label">Рост среднего чека у курьеров с овердрафтами</div><div class="stat-sub">6 351 → 7 275 XOF</div></div><div class="stat-right"><span class="stat-value">+15%</span></div></div>
+        <div class="stat-row"><div><div class="stat-label">Рост CoD-заказов у курьеров с overdrafts</div><div class="stat-sub">1 199 → 3 662</div></div><div class="stat-right"><span class="stat-value cod-strong">+205%</span></div></div>
+        <div class="stat-row" style="border:none"><div><div class="stat-label">Рост среднего чека у курьеров с овердрафтами</div><div class="stat-sub">6 351 → 7 275 XOF</div></div><div class="stat-right"><span class="stat-value cod-strong">+15%</span></div></div>
       </div>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:12px">
       <div class="driver-card" style="border-left-color:var(--green)">
-        <div class="status-chip ok">↑ Выше ожиданий</div>
+        <div class="status-chip high">↑ Выше ожиданий</div>
         <div class="driver-header"><span class="driver-icon">📋</span><span class="driver-title">Новая форма в продукте · раскатка 50%</span></div>
         <p class="driver-body">Новая форма заказа в Кот-д'Ивуар с CoD: +300% доставок с CoD, 18% доля GB от GB страны — выше ожиданий.</p>
-        <div class="pill"><span class="pill-label">Доставки CoD</span><span class="pill-value" style="color:var(--green)">+300%</span></div><div class="pill"><span class="pill-label">Доля GB</span><span class="pill-value" style="color:var(--green)">18% · выше ожиданий</span></div>
+        <div class="pill"><span class="pill-label">Доставки CoD</span><span class="pill-value cod-strong">+300%</span></div><div class="pill"><span class="pill-label">Доля GB</span><span class="pill-value cod-strong">18% · выше ожиданий</span></div>
       </div>
       <div class="driver-card" style="border-left-color:#7B3FBE">
         <div class="driver-header"><span class="driver-icon">📣</span><span class="driver-title">Маркетинг: узнаваемость CoD</span></div>
@@ -430,7 +433,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
       <div class="driver-card" style="border-left-color:var(--green)">
         <div class="driver-header"><span class="driver-icon">🏋️</span><span class="driver-title">Park Motivation · Senegal (совместно с Express)</span></div>
         <p class="driver-body">Парковые мотивации в Сенегале, Кот-д'Ивуаре и Гане запущены совместно для Express и Cargo. В Сенегале рост новичков в 2 раза — выше ожиданий; в Коте и Гане эффектов нет — ниже ожиданий.</p>
-        <div class="pill"><span class="pill-label">Senegal</span><span class="pill-value" style="color:var(--green)">×2 новички · выше ожиданий</span></div><div class="pill"><span class="pill-label">CIV/GH</span><span class="pill-value" style="color:var(--amber)">нет эффекта · ниже ожиданий</span></div>
+        <div class="pill"><span class="pill-label">Senegal</span><span class="pill-value" style="color:var(--purple)">×2 новички · выше ожиданий</span></div><div class="pill"><span class="pill-label">CIV/GH</span><span class="pill-value" style="color:var(--amber)">нет эффекта · ниже ожиданий</span></div>
       </div>
     </div>
   </div>
@@ -440,14 +443,14 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
     <div class="driver-section-title" style="margin-top:4px">Работа с данными</div>
     <div class="grid-3" style="margin-bottom:16px">
       <div class="driver-card" style="border-left-color:var(--green)">
-        <div class="status-chip ok">↑ выше ожиданий</div>
+        <div class="status-chip high">↑ выше ожиданий</div>
         <div class="driver-header"><span class="driver-icon">✅</span><span class="driver-title">Прозрачность трекинга каналов</span></div>
         <p class="driver-body">Прозрачный трекинг курьеров по каждому каналу — без единого ресурса аналитики.</p>
         <a href="https://datalens.yandex-team.ru/qnjca7v48wnoa-acquisition-efficiency?tab=Ol&state=a859c8ef670" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px;transition:background .15s"><span style="font-size:16px">📊</span><span style="font-size:11px;font-weight:600;color:var(--sky);line-height:1.3">Открыть дашборд в DataLens →</span></a>
         <div style="background:var(--green-bg);border-radius:8px;padding:7px 10px;font-size:11px;color:var(--green)">✓ Выполнено · без ресурса аналитики</div>
       </div>
       <div class="driver-card" style="border-left-color:var(--green)">
-        <div class="status-chip ok">↑ выше ожиданий</div>
+        <div class="status-chip high">↑ выше ожиданий</div>
         <div class="driver-header"><span class="driver-icon">✅</span><span class="driver-title">Real Financial Costs</span></div>
         <p class="driver-body">Реальные затраты на аквиз по каналам в дашборде — Agents, Call Center, Park Motivation, Performance, Referral, Scouts, SMM, WhatsApp.</p>
         <a href="https://datalens.yandex-team.ru/qnjca7v48wnoa-acquisition-efficiency?tab=Ol&state=a859c8ef670" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;text-decoration:none;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:8px;transition:background .15s"><span style="font-size:16px">📊</span><span style="font-size:11px;font-weight:600;color:var(--sky);line-height:1.3">Открыть дашборд в DataLens →</span></a>
@@ -573,7 +576,7 @@ nav#section-nav{display:flex;gap:4px;background:rgba(0,0,0,.15);border-radius:10
   <div class="grid-2" style="margin-bottom:14px">
 
     <div class="driver-card" style="border-left-color:var(--green)">
-      <div class="driver-header"><span class="driver-icon">👤</span><span class="driver-title">Алевтина</span><span class="status-chip ok" style="font-size:9px;padding:2px 8px;margin:0 0 0 6px">↑ выше ожиданий</span></div>
+      <div class="driver-header"><span class="driver-icon">👤</span><span class="driver-title">Алевтина</span><span class="status-chip high" style="font-size:9px;padding:2px 8px;margin:0 0 0 6px">↑ выше ожиданий</span></div>
       <div style="margin-bottom:10px">
         <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:5px">Зона ответственности</div>
         <p class="driver-body" style="margin:0">Полностью забрала на себя работу команды аквиза: ведение всего стрима в межнаре от запусков до сопровождения всех проектов во всех гео.</p>
